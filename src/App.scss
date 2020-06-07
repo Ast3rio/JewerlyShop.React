@@ -1,0 +1,40 @@
+
+html {
+	box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+ul {
+	padding: 0;
+}
+
+li {
+	list-style: none;
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+}
+
+
+.app-wrapper{
+  display: grid;
+  grid-template-areas: "header"  
+                        "content"  
+                        "footer";
+  grid-template-columns: 100%;  
+  grid-template-rows: 350px 1fr 350px;
+  grid-gap: 10px;
+  max-width: 80%;
+	margin: 0 auto;
+  padding: 0px 15px;
+}

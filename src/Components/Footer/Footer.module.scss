@@ -1,0 +1,19 @@
+.footer{
+    grid-area: footer;
+    padding: 50px 0;
+    border-top: 1px solid #D67800;
+    text-align: center;
+    p{
+        text-transform: uppercase;
+        color: #6c6c6c;
+        font-size: 12px;
+        line-height: 5px;
+    }
+}
+
+.footer__top{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 60px;
+    min-height: 180px;
+}

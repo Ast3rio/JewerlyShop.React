@@ -1,0 +1,16 @@
+.menu{
+    width: 20%;
+    text-align: left;
+    text-transform: uppercase;
+    font-size: 14px;
+    li{
+        display: block;
+        margin-bottom: 8px;
+    }
+    a{
+        color: #6c6c6c;
+        &:hover{
+            color: #000;
+        }
+    }
+}

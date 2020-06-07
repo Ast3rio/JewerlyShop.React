@@ -1,0 +1,25 @@
+.menu{
+    width: 100%;
+    padding-top: 50px;
+    text-align: center;
+    li{
+        margin-right: 50px;
+        &:last-child{
+            margin-right: 0;
+        }
+    }
+	a{
+        color: #6c6c6c;
+        font-size: 14px;
+        text-transform: uppercase;
+		&:hover{
+			color: #000;
+			transition: 0.15s;
+		}
+	}
+}
+
+.active{
+    color: #000 !important;
+    border-bottom: 1px solid #D67800;
+}

@@ -1,0 +1,11 @@
+.header{
+    grid-area: header;
+    border-bottom: 1px solid #D67800;
+    padding: 30px 0;
+    img{
+        width: 200px;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
