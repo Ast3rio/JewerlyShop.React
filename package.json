@@ -32,7 +32,11 @@
     ]
   },
   "devDependencies": {
+    "axios": "^0.19.2",
     "node-sass": "^4.14.1",
-    "react-router-dom": "^5.1.2"
+    "normalize.css": "^8.0.1",
+    "react-redux": "^7.2.0",
+    "react-router-dom": "^5.1.2",
+    "redux": "^4.0.5"
   }
 }

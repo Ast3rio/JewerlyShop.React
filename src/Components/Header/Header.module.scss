@@ -9,3 +9,39 @@
         transform: translateX(-50%);
     }
 }
+
+.top{
+    display: flex;
+    justify-content: space-between;
+    height: 40px;
+}
+
+.cart{
+    position: relative;
+    padding-right: 40px;
+}
+
+.cart::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    background-color: #000;
+}
+
+.search{
+    position: relative;
+    margin-left: 20px;
+}
+
+.search::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    background-color: #000;
+}
