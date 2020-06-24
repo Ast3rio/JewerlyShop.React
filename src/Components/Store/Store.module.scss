@@ -1,4 +1,9 @@
-.store_wrapper{
+.store{
     grid-area: 'content';
     min-height: 1170px;
+}
+
+.store_wrapper{
+    display: flex;
+    justify-content: start;
 }
