@@ -3,7 +3,8 @@ import s from './Footer.module.scss';
 import FooterContacts from './FooterContacts/FooterContacts';
 import FooterMenu from './FooterMenu/FooterMenu';
 import FooterSocial from './FooterSocial/FooterSocial';
-import FooterSubscribe from './FooterSubscribe/FooterSubscribe';
+import SubscribeContainer from './Subscribe/SubscribeContainer';
+
 
 const Footer = () => {
     return (
@@ -12,7 +13,7 @@ const Footer = () => {
                 <FooterMenu />
                 <FooterSocial />
                 <FooterContacts />
-                <FooterSubscribe />
+                <SubscribeContainer />
             </div>
             <p>Chernyshovu jewerly</p>
             <p>2019</p>

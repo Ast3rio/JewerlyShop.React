@@ -15,12 +15,12 @@ function App() {
   return (
     <div className="app-wrapper">
       <Header />
-      <Route path='/main' component={MainContainer} />
-      <Route path='/store' component={Store} />
-      <Route path='/brand' component={Brand} />
-      <Route path='/delivery' component={Delivery} />
-      <Route path='/refund' component={Refund} />
-      <Route path='/contacts' component={Contacts} />
+        <Route path='/main' component={MainContainer} />
+        <Route path='/store' component={Store} />
+        <Route path='/brand' component={Brand} />
+        <Route path='/delivery' component={Delivery} />
+        <Route path='/refund' component={Refund} />
+        <Route path='/contacts' component={Contacts} />
       <Footer />
     </div>
   );
