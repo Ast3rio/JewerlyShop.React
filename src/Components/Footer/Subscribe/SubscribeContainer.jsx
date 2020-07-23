@@ -9,7 +9,7 @@ class SubscribeContainer extends React.Component{
 
     render(){
         return(
-            <Subscribe {...this.props} />
+            <Subscribe {...this.props} setSubscribe={this.props.setSubscribe}/>
         )
     }
 

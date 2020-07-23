@@ -10,17 +10,21 @@ const Subscribe = (props) =>{
         props.updateSubscribeText(text);
     }
 
-    let onSubscribeClick = (e)=> {
-        e.preventDefault();
-        console.log(props.newSubscribeText);
-    }
-
     return(
         <div className={s.subscribe}>
             Подписаться:
             <form>
-                <input onChange={onTextChange} ref={newSubscribeElement} type="email" placeholder="e-mail" value={props.newSubscribeText}/>
-                {props.subscribe ? <button>Вы подписаны</button> : <button onClick={onSubscribeClick}>Подписаться</button>}
+                <input onChange={onTextChange} ref={newSubscribeElement} type="email" placeholder="mail@mail.com" value={props.newSubscribeText}/>
+                {props.subscribe ? <button onClick={(e)=>{
+                    e.preventDefault();
+                    console.log("Пользователь отписался");
+                    props.setSubscribe(false);
+                }}>Отписаться</button> : <button onClick={(e)=>{
+                    e.preventDefault();
+                    console.log('Добавлен новый подписчик: ' + props.newSubscribeText);
+                    props.setSubscribe(true);
+                    props.updateSubscribeText('');
+                }}>Подписаться</button>}
             </form>
         </div>
     )

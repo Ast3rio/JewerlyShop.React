@@ -4,7 +4,7 @@ const SET_SUBSCRIBE = 'SET_SUBSCRIBE';
 
 let InitialState = {
     subscribe: false,
-    newSubscribeText: 'e-mail',
+    newSubscribeText: '',
 }
 
 const footerReducer = (state = InitialState, action) => {
