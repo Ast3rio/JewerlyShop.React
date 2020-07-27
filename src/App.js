@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.scss';
-import { Route } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 import Header from './Components/Header/Header';
 import Footer from './Components/Footer/Footer';
 import Store from './Components/Store/Store';
@@ -15,12 +15,15 @@ function App() {
   return (
     <div className="app-wrapper">
       <Header />
+      <Switch>
         <Route path='/main' component={MainContainer} />
         <Route path='/store' component={Store} />
         <Route path='/brand' component={Brand} />
         <Route path='/delivery' component={Delivery} />
         <Route path='/refund' component={Refund} />
         <Route path='/contacts' component={Contacts} />
+        <Redirect from="/" to="/main" />
+      </Switch>
       <Footer />
     </div>
   );

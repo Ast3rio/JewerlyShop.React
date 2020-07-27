@@ -5,9 +5,6 @@ import s from './Main.module.scss';
 const Main = ()=>{
     return(
         <section className={s.main}>
-            <div className={s.btn}>
-                <a href="#">Все товары</a>
-            </div>
             <div className={s.wrapper}>
                 <a href="#" className={s.img_1}><div className={s.title}><p>Кольца</p></div></a>
                 <a href="#" className={s.img_2}><div className={s.title}><p>Серьги</p></div></a>

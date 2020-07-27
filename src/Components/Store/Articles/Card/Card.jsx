@@ -1,5 +1,6 @@
 import React from 'react';
 import s from './Card.module.scss';
+import { Button } from '../../../Common/FormsControls';
 
 
 const Card = (props) => {
@@ -17,9 +18,7 @@ const Card = (props) => {
                         <li>Ширина основы: {c.descr.width}</li>
                         <li>Материал: {c.descr.material}</li>
                     </ul>
-                    <div className={s.btn}>
-                        <a href="#">В корзину</a>
-                    </div>
+                    <Button label={'В корзину'} className={s.card_btn} />
                 </li>)
         }
         </ul >

@@ -2,10 +2,10 @@ import React from 'react';
 import s from './Contacts.module.scss';
 import { reduxForm, Field } from 'redux-form';
 import { maxLengthCreator, minLengthCreator, required } from '../../utils/validator/validator';
-import { Textarea, Input } from '../Common/FormsControls';
+import { Textarea, Input, Button } from '../Common/FormsControls';
 
-    let maxLength = maxLengthCreator(10);
-    let minLength = minLengthCreator(2);
+let maxLength = maxLengthCreator(10);
+let minLength = minLengthCreator(2);
 
 const Contacts = () => {
 
@@ -40,20 +40,20 @@ const Contacts = () => {
 }
 
 const ContactsForm = (props) => {
-    
+
     return (
         <form onSubmit={props.handleSubmit}>
-            <Field className={s.form_styles + ' ' + s.input} label={"Имя"} validate={[required, maxLength, minLength]} name={"name"} type={"text"} component={Input}/>
-            <Field className={s.form_styles + ' ' + s.input} label={"E-mail"} validate={[required, maxLength, minLength]} type={"text"} name={"email"} component={Input}/>
-            <Field className={s.form_styles + ' ' + s.textarea} validate={[required, maxLength, minLength]} label={"Введите ваше сообщение"} name={"text"} component={Textarea} />
-            <button className={s.form_styles + ' ' + s.btn}>Написать</button>
+            <Field className={s.form_styles} label={"Имя"} validate={[required, maxLength, minLength]} name={"name"} type={"text"} component={Input} />
+            <Field className={s.form_styles} label={"E-mail"} validate={[required, maxLength, minLength]} type={"text"} name={"email"} component={Input} />
+            <Field className={s.form_styles} validate={[required, maxLength, minLength]} label={"Введите ваше сообщение"} name={"text"} component={Textarea} />
+            <Button label={'Написать'} className={s.form_styles} />
         </form>
     )
 }
 
 const UsersOffer = reduxForm({
     form: 'contacts'
-  })(ContactsForm)
+})(ContactsForm)
 
 
 export default Contacts;

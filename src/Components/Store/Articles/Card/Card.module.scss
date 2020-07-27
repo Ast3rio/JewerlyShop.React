@@ -45,18 +45,10 @@
 }
 
 
-.btn{
+.card_btn{
     transition: 0.5s;
     margin-top: 15%;
-    padding-left: 10%;
-    a{
-        display: inline-block;
-        background-color: #000;
-        color: #fff;
-        padding: 10px 20px;
-        &:hover{
-            background-color: #D67700; 
-            transition: 0.5s;
-        }
-    }
+    margin-left: 10%;
+    padding: 0 5%;
+    display: inline-block;
 }
