@@ -5,25 +5,25 @@ const Sidebar = () => {
     return (
         <ul className={s.sidebar}>
             <li>
-                <a href="#">Все товары</a>
+                <a href="#top">Все товары</a>
             </li>
             <li>
-                <a href="#">Кольца</a>
+                <a href="#top">Кольца</a>
             </li>
             <li>
-                <a href="#">Серьги</a>
+                <a href="#top">Серьги</a>
             </li>
             <li>
-                <a href="#">Браслеты</a>
+                <a href="#top">Браслеты</a>
             </li>
             <li>
-                <a href="#">Мужские украшения</a>
+                <a href="#top">Мужские украшения</a>
             </li>
             <li>
-                <a href="#">Женские украшения</a>
+                <a href="#top">Женские украшения</a>
             </li>
             <li>
-                <a href="#">Новое</a>
+                <a href="#top">Новое</a>
             </li>
         </ul>
     )

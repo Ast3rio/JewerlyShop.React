@@ -6,10 +6,11 @@ import { reduxForm, Field } from 'redux-form';
 import { Input } from '../../Common/FormsControls';
 import { useEffect } from 'react';
 
-const Subscribe = (props) => {
+
+const Subscribe = ({setSubscribe, subscribe}) => {
 
     let onSubmit = (dataForm) => {
-        props.setSubscribe(true);
+        setSubscribe(true);
         setModalWindow(true);
         console.log('Пользователь подписался: ' + dataForm.email);
     }
@@ -20,23 +21,22 @@ const Subscribe = (props) => {
         setTimeout(() => {
             setModalWindow(false)
         }, 2000);
-    }, [setTimeout(true)])
-
+    }, [setTimeout(true)]);
 
     return (
         <div className={s.subscribe}>
             Подписаться:
-            <SubscribeFormContainer onSubmit={onSubmit} modalWindow={modalWindow} subscribe={props.subscribe} />
+            <SubscribeFormContainer onSubmit={onSubmit} modalWindow={modalWindow} subscribe={subscribe} />
         </div>
     )
 }
 
 
-const SubscribeForm = (props) => {
-    return (<form onSubmit={props.handleSubmit}>
-        <Field component={Input} name={'email'} type={'text'} label='введите имейл' />
-        {props.subscribe ? <button disabled>Вы подписаны</button> : <button>Подписаться</button>}
-        {props.modalWindow ? <ModalWindow label={'Вы подписались'} /> : ''}
+const SubscribeForm = ({handleSubmit, subscribe, modalWindow}) => {
+    return (<form onSubmit={handleSubmit}>
+        <Field component={Input} name='email' type='text' label='введите имейл' />
+        {subscribe ? <button disabled>Вы подписаны</button> : <button>Подписаться</button>}
+        {modalWindow ? <ModalWindow label={'Вы подписались'} /> : ''}
     </form>)
 }
 

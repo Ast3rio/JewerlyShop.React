@@ -16,7 +16,7 @@ const Footer = () => {
                 <SubscribeContainer />
             </div>
             <p>Chernyshovu jewerly</p>
-            <p>2019</p>
+            <p>2020</p>
         </footer>
     )
 }

@@ -19,6 +19,7 @@
 .cart{
     position: relative;
     padding-right: 40px;
+    cursor: pointer;
 }
 
 .cart::before{
@@ -34,6 +35,7 @@
 .search{
     position: relative;
     margin-left: 20px;
+    cursor: pointer;
 }
 
 .search::before{

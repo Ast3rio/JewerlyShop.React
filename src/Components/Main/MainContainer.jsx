@@ -7,11 +7,7 @@ let mapStateToProps = () => {
     }
 }
 
-let mapDispatchToProps = () => {
 
-}
-
-
-const MainContainer = connect(mapStateToProps, mapDispatchToProps) (Main);
+const MainContainer = connect(mapStateToProps) (Main);
 
 export default MainContainer;

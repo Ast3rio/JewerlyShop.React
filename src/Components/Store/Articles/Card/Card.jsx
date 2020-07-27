@@ -4,8 +4,9 @@ import { Button } from '../../../Common/FormsControls';
 
 
 const Card = (props) => {
+
     return (
-        <ul className={s.wrapper}>{
+        <ul className={s.wrapper}> {
             props.card.map(c =>
                 <li className={s.card} key={c.id}>
                     <div className={s.img}></div>
@@ -18,7 +19,7 @@ const Card = (props) => {
                         <li>Ширина основы: {c.descr.width}</li>
                         <li>Материал: {c.descr.material}</li>
                     </ul>
-                    <Button label={'В корзину'} className={s.card_btn} />
+                    <Button label={'В корзину'} onClick={()=>{props.addToCart(c.id)}} className={s.card_btn} />
                 </li>)
         }
         </ul >
