@@ -1,14 +1,14 @@
 export const required = value => {
     if(value) return undefined;
-    return 'Field is empty';
+    return 'Пустая строка';
 }
 
 export const maxLengthCreator = (maxLength) => value => {
-    if(value.length > maxLength) return `Max length ${maxLength} is error`;
+    if(value.length > maxLength) return `Максимальное количество символов ${maxLength}`;
     return undefined;
 }
 
 export const minLengthCreator = (minLength) => value => {
-    if(value.length < minLength) return `Min length ${minLength} is error`;
+    if(value.length < minLength) return `Минимальное количество символов ${minLength}`;
     return undefined;
 }

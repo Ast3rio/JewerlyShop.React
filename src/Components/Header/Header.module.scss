@@ -1,6 +1,8 @@
+@import "../../vars";
+
 .header{
     grid-area: header;
-    border-bottom: 1px solid #D67800;
+    border-bottom: 1px solid $mainColor;
     padding: 30px 0;
     img{
         width: 200px;
@@ -21,7 +23,7 @@
     font-size: 24px;
     cursor: pointer;
     &:hover{
-        color: #D67800;
+        color: $mainColor;
     }
 }
 

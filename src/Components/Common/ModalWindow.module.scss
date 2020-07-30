@@ -1,3 +1,5 @@
+@import '../../vars';
+
 .modal{
     position: fixed;
     top: 50%;
@@ -7,5 +9,5 @@
     height: 150px;
     background-color: #fff;
     padding: 50px;
-    border: 1px solid #D60;
+    border: 1px solid $mainColor;
 }

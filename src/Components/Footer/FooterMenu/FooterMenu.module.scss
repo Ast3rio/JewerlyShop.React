@@ -1,3 +1,5 @@
+@import '../../../vars';
+
 .menu{
     width: 20%;
     text-align: left;
@@ -8,7 +10,7 @@
         margin-bottom: 8px;
     }
     a{
-        color: #6c6c6c;
+        color: $accentColor;
         &:hover{
             color: #000;
         }

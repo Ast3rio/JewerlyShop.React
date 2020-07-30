@@ -1,4 +1,6 @@
+@import '../../../vars';
+
 .contacts{
-    border-right: 1px dotted #D67800;
+    border-right: 1px dotted $mainColor;
     width: 30%;
 }

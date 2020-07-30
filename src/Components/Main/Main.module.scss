@@ -1,4 +1,4 @@
-
+@import '../../vars';
 .wrapper{
     text-align: center;
     padding: 20px 0;
@@ -26,12 +26,14 @@
     padding-top: 65%;
     font-size: 2.285714285714286em; /*32px*/ /*14px*/
     font-weight: 700;
-    color: #000;
+    font-style: italic;
+    color: $mainColor;
+    text-shadow: $mainColor 0 0 10px;
     p{
         display: inline-block;
         padding: 5%;
         width: 100%;
-        background-color: rgba(#9999, 0.4);
+        background-color: rgba($accentColor, 0.4);
         line-height: 1;
     }
 }

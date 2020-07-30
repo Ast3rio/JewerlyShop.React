@@ -1,8 +1,23 @@
+@import '../../../vars';
+
 .sidebar{
-    width: 15%;
+    text-transform: uppercase;
+    white-space: nowrap;
+    margin-top: 20px;
     li{
         display: block;
         margin-bottom: 10px;
-        font-size: 18px;
+        font-size: 15px;
+        margin-bottom: 8px;
+        &:last-child{
+            margin-bottom: 0;
+        }
+        a{
+            color: $accentColor;
+            &:hover{
+                color: #000;
+                border-bottom: 1px solid $mainColor;
+            }
+        }
     }
 }

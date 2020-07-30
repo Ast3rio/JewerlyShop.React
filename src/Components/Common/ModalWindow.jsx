@@ -1,9 +1,9 @@
 import React from 'react';
 import s from './ModalWindow.module.scss';
 
-const ModalWindow = ({label}) => {
+const ModalWindow = ({label, className}) => {
     return(
-        <div className={s.modal}>
+        <div className={s.modal + ' ' + className}>
             {label}
         </div>
     )

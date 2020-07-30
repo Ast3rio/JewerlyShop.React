@@ -1,6 +1,8 @@
+@import '../../../vars';
+
 .social{
-    border-right: 1px dotted #D67800;
-    border-left: 1px dotted #D67800;
+    border-right: 1px dotted $mainColor;
+    border-left: 1px dotted $mainColor;
     width: 30%;
     text-align: center;
 }
@@ -13,12 +15,12 @@
     margin-left: 130px;
     font-size: 20px;
     li{
-        background-color: #ccc;
+        background-color: $accentColor;
         min-width: 40px;
         height: 40px;
         border-radius: 30px;
         margin-right: 10px;
-        transition: all 0.8s ease-in;
+        transition: all 0.6s ease-in;
         cursor: pointer;
         &:last-child{
             margin-right: 0;

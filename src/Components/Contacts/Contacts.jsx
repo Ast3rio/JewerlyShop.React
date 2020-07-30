@@ -3,20 +3,32 @@ import s from './Contacts.module.scss';
 import { reduxForm, Field } from 'redux-form';
 import { maxLengthCreator, minLengthCreator, required } from '../../utils/validator/validator';
 import { Textarea, Input, Button } from '../Common/FormsControls';
+import { useState, useEffect } from 'react';
+import ModalWindow from '../Common/ModalWindow';
 
 let maxLength20 = maxLengthCreator(20);
 let minLength5 = minLengthCreator(5);
 let maxLength1000 = maxLengthCreator(1000);
 let minLength20 = minLengthCreator(20);
 
+
 const Contacts = () => {
+
+    let [modalWindow, setModalWindow] = useState(false);
+    useEffect(() => {
+        setTimeout(() => {
+            setModalWindow(false)
+        }, 2000);
+    }, [setTimeout(true)]);
 
     const onSubmit = (formData) => {
         console.log('Email: ' + formData.email + ' Name: '  + formData.name + ' Message: ' +  formData.text);
+        setModalWindow(true);
     }
 
     return (
         <section className={s.contacts}>
+            {modalWindow ? <ModalWindow label='Ваше сообщение отправлено' className={s.modal}/> : ''}
             <div className={s.contacts__wrapper}>
                 <div className={s.block__left}>
                     <h3>Контакты</h3>

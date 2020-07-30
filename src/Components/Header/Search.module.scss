@@ -1,6 +1,8 @@
+@import '../../vars';
+
 .wrapper{
     background-color: #fff;
-    border: 1px solid #D67700;
+    border: 1px solid $mainColor;
     width: 1410px;
     min-height: 800px;
     position: fixed;
@@ -14,6 +16,6 @@
     right: 20px;
     cursor: pointer;
     &:hover{
-        color: #D67700;
+        color: $mainColor;
     }
 }

@@ -1,18 +1,21 @@
+@import '../../vars';
+
 .wrapper{
     position: relative;
 }
 
 .error{
-    border: red 3px solid;
+    border: $errorColor 3px solid;
     border-radius: 30px;
-    box-shadow: 3px 3px 8px red;
+    box-shadow: 3px 3px 8px $errorColor;
     font-size: 12px;
-    color: red;
-    width: 200px;
+    color: $errorColor;
+    width: 240px;
     height: 40px;
     position: absolute;
+    text-transform: none;
     top: 0;
-    right: 50px;
+    right: 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -26,7 +29,7 @@
     cursor: pointer;
     transition: all 0.5s;
     &:hover{
-        background-color: #D67700; 
+        background-color: $accentColor; 
     }
 }
 
