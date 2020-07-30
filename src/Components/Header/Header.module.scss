@@ -16,34 +16,21 @@
     height: 40px;
 }
 
-.cart{
+.icon_style{
     position: relative;
-    padding-right: 40px;
+    font-size: 24px;
     cursor: pointer;
+    &:hover{
+        color: #D67800;
+    }
 }
 
-.cart::before{
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 20px;
-    height: 20px;
-    background-color: #000;
+.cart{
+    margin-right: 20px;
 }
 
 .search{
-    position: relative;
     margin-left: 20px;
-    cursor: pointer;
 }
 
-.search::before{
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 20px;
-    height: 20px;
-    background-color: #000;
-}
+

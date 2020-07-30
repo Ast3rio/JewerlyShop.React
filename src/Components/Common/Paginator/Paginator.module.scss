@@ -1,0 +1,15 @@
+.paginator{
+    width: 100px;
+    height: 20px;
+}
+
+.page_number{
+    margin-right: 5px;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.selected_page{
+    font-weight: 700;
+    color: #D67700;
+}

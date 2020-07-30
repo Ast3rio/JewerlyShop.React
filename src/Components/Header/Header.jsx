@@ -4,6 +4,8 @@ import logo from './../../assets/img/logo.png';
 import Menu from './Menu/Menu';
 import Cart from './Cart';
 import Search from './Search';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faShoppingCart, faSearch } from '@fortawesome/free-solid-svg-icons';
 
 
 
@@ -29,8 +31,8 @@ const Header = (props) => {
     return (
         <header className={s.header}>
             <div className={s.top}>
-                <div className={s.search} onClick={openSearch} ></div>
-                <div className={s.cart} onClick={openCart}></div>
+                <FontAwesomeIcon className={s.search + ' ' + s.icon_style} onClick={openSearch}  icon={faSearch} />
+                <FontAwesomeIcon className={s.cart  + ' ' + s.icon_style} onClick={openCart} icon={faShoppingCart}/>
                 {cart && <Cart card={props.card} closeCart={closeCart} deleteFromCart={props.deleteFromCart}/>}
                 {search && <Search closeSearch={closeSearch}/>}
             </div>

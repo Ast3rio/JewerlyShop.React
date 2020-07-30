@@ -2,4 +2,76 @@
     border-right: 1px dotted #D67800;
     border-left: 1px dotted #D67800;
     width: 30%;
+    text-align: center;
+}
+
+.icons{
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    width: 100px;
+    margin-left: 130px;
+    font-size: 20px;
+    li{
+        background-color: #ccc;
+        min-width: 40px;
+        height: 40px;
+        border-radius: 30px;
+        margin-right: 10px;
+        transition: all 0.8s ease-in;
+        cursor: pointer;
+        &:last-child{
+            margin-right: 0;
+        }
+    }
+    .list{
+        &_vk:hover{
+            background-color: #5181B8;
+        }
+        &_telegram:hover{
+            background-color: #31ADE0;
+        }
+        &_instagram:hover{
+            background-color: #DF013E;
+        }
+    }
+}
+
+.ico{
+    font-family: 'IcoFont';
+    color: #fff;
+    position: relative;
+    &:hover{
+        color: #fff;
+    }
+}
+
+.vk{
+    &::before{
+        content: '\ed83';
+        position: absolute;
+        top: 5px;
+        left: 0;
+        transform: translate(-50%);
+    }
+}
+
+.telegram{
+    &::before{
+        content: '\ed75';
+        position: absolute;
+        top: 5px;
+        left: 1px;
+        transform: translate(-50%);
+    }
+}
+
+.instagram{
+    &::before{
+        content: '\ed46';
+        position: absolute;
+        top: 5px;
+        left: 1px;
+        transform: translate(-50%);
+    }
 }

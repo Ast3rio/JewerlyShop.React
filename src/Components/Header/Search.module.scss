@@ -1,8 +1,8 @@
 .wrapper{
     background-color: #fff;
     border: 1px solid #D67700;
-    width: 80%;
-    height: 800px;
+    width: 1410px;
+    min-height: 800px;
     position: fixed;
     z-index: 5;
 }
@@ -13,4 +13,7 @@
     top: -10px;
     right: 20px;
     cursor: pointer;
+    &:hover{
+        color: #D67700;
+    }
 }
