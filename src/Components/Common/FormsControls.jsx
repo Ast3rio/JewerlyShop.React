@@ -13,13 +13,13 @@ export const Textarea = ({ input, className, label, type, meta }) => {
     )
 }
 
-export const Input = ({ input, className, label, type, meta }) => {
+export const Input = ({ input, className, label, type, meta, valuespace, disabled }) => {
 
     const hasError = meta.touched && meta.error;
 
     return (
         <div className={s.wrapper}>
-            <input {...input} className={className + ' ' + s.input} placeholder={label} type={type} />
+            <input {...input} className={className + ' ' + s.input} disabled={disabled} value={valuespace} placeholder={label} type={type} />
             {hasError && <span className={hasError ? s.error : ''}>{meta.error}</span>}
         </div>
     )

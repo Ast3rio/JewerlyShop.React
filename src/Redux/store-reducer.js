@@ -6,7 +6,7 @@ const SET_CURRENT_PAGE = 'SET_CURRENT_PAGE';
 
 let initialState = {
     card: [
-        { id: 1, title: 'Ring 1', price: 700, status: 'есть в наличии', addedToCart: false, descr: { width: '8', material: 'wood' } },
+        { id: 1, title: 'Ring 1', price: 700, status: 'есть в наличии', addedToCart: false, descr: { width: '8', material: 'красное дерево' } },
         { id: 2, title: 'Ring 2', price: 1400, status: 'нет на складе', addedToCart: false, descr: { width: '12', material: 'metal' } },
         { id: 3, title: 'Ring 3', price: 300, status: 'есть в наличии', addedToCart: false, descr: { width: '6', material: 'wood' } },
         { id: 4, title: 'Ring 4', price: 1200, status: 'есть в наличии', addedToCart: false, descr: { width: '10', material: 'metal' } },

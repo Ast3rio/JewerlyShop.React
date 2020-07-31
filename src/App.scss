@@ -1,40 +1,4 @@
 
-html {
-	box-sizing: border-box;
-}
-
-*,
-*::before,
-*::after {
-	box-sizing: inherit;
-}
-
-a {
-  text-decoration: none;
-  color: #000;
-  &:hover{
-    text-decoration: none;
-  }
-}
-
-ul {
-	padding: 0;
-}
-@import 'vars';
-
-
-li {
-	list-style: none;
-	display: inline-block;
-	margin: 0;
-	padding: 0;
-}
-
-body{
-  font-family: $mainFont;
-}
-
-
 .app-wrapper{
   display: grid;
   grid-template-areas: "header"  
@@ -46,6 +10,15 @@ body{
   max-width: 80%;
 	margin: 0 auto;
   padding: 0px 15px;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+  &:hover{
+    color: #000;
+    text-decoration: none;
+  }
 }
 
 .container{
