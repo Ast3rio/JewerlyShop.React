@@ -8,8 +8,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart, faSearch } from '@fortawesome/free-solid-svg-icons';
 
 
-
-
 const Header = (props) => {
 
     const [cart, setCart] = useState(false);
@@ -33,7 +31,7 @@ const Header = (props) => {
             <div className={s.top}>
                 <FontAwesomeIcon className={s.search + ' ' + s.icon_style} onClick={openSearch} icon={faSearch} />
                 <div className={s.cart__wrapper}>
-                    <div className={s.cart__number}>12</div>
+                    <div className={s.cart__number}>{props.totalCountInCart}</div>
                     <FontAwesomeIcon className={s.cart + ' ' + s.icon_style} onClick={openCart} icon={faShoppingCart} />
                 </div>
                 {cart && <Cart card={props.card} closeCart={closeCart} deleteFromCart={props.deleteFromCart} />}

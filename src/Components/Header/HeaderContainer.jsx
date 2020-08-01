@@ -15,6 +15,7 @@ class HeaderContainer extends React.Component {
 let mapStateToProps = (state) =>{
     return {
         card: state.storePage.card,
+        totalCountInCart: state.storePage.totalCountInCart,
     }
 }
 

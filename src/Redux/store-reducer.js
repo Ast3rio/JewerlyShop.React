@@ -30,6 +30,7 @@ let initialState = {
     totalItemsCount: 20,
     pageSize: 9,
     currentPage: 1,
+    totalCountInCart: 7,
 }
 
 const storePageReducer = (state = initialState, action) => {

@@ -4,6 +4,7 @@
     text-transform: uppercase;
     white-space: nowrap;
     margin-top: 20px;
+    width: 270px;
     li{
         display: block;
         margin-bottom: 10px;
@@ -19,5 +20,49 @@
                 border-bottom: 1px solid $mainColor;
             }
         }
+    }
+}
+
+.products__filter{
+    margin-top: 40px;
+    width: 100%;
+    min-height: 500px;
+    text-align: center;
+    h4{
+        text-transform: uppercase;
+        border-bottom: 1px solid $mainColor;
+        width: 100%;
+        padding: 10px 0;
+        font-style: italic;
+        font-weight: 700;
+    }
+    p{
+        font-family: $cursiveFont;
+        font-weight: 700;
+        font-size: 24px;
+        margin-top: 10px;
+    }
+    input{
+        width: 60px;
+        text-align: center;
+        height: 40px;
+        margin-right: 8px;
+    }
+    select{
+        width: 80%;
+    }
+    &__price{
+        width: 95%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+    &__width{
+        width: 95%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 10px;
     }
 }
