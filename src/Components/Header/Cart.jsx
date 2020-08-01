@@ -14,6 +14,11 @@ const Cart = ({ closeCart, deleteFromCart, ...props }) => {
                     c.addedToCart && <li key={c.id} className={'col-4' + ' ' + s.card_list}>
                         <div className={s.cart_img}></div>
                         <span className={s.cart_title}>{c.title}</span>
+                        <ul className={s.cart_list}>
+                            <li>Цена товара: {c.price + ' $'} </li>
+                            <li>Количество: {c.sumprice}</li>
+                            <li>Сума к оплате: {c.price * c.sumprice + ' $'}</li>
+                        </ul>
                         <Button label={'Удалить'} onClick={() => { deleteFromCart(c.id) }} className={s.cart_btn} />
                     </li>
                 )}

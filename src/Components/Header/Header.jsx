@@ -11,19 +11,19 @@ import { faShoppingCart, faSearch } from '@fortawesome/free-solid-svg-icons';
 
 
 const Header = (props) => {
-    
+
     const [cart, setCart] = useState(false);
-    let openCart = () =>{
+    let openCart = () => {
         setCart(true);
     };
-    let closeCart = () =>{
+    let closeCart = () => {
         setCart(false);
     };
     const [search, setSearch] = useState(false);
-    let openSearch = () =>{
+    let openSearch = () => {
         setSearch(true);
     };
-    let closeSearch = () =>{
+    let closeSearch = () => {
         setSearch(false);
     };
 
@@ -31,10 +31,13 @@ const Header = (props) => {
     return (
         <header className={s.header}>
             <div className={s.top}>
-                <FontAwesomeIcon className={s.search + ' ' + s.icon_style} onClick={openSearch}  icon={faSearch} />
-                <FontAwesomeIcon className={s.cart  + ' ' + s.icon_style} onClick={openCart} icon={faShoppingCart}/>
-                {cart && <Cart card={props.card} closeCart={closeCart} deleteFromCart={props.deleteFromCart}/>}
-                {search && <Search closeSearch={closeSearch}/>}
+                <FontAwesomeIcon className={s.search + ' ' + s.icon_style} onClick={openSearch} icon={faSearch} />
+                <div className={s.cart__wrapper}>
+                    <div className={s.cart__number}>12</div>
+                    <FontAwesomeIcon className={s.cart + ' ' + s.icon_style} onClick={openCart} icon={faShoppingCart} />
+                </div>
+                {cart && <Cart card={props.card} closeCart={closeCart} deleteFromCart={props.deleteFromCart} />}
+                {search && <Search closeSearch={closeSearch} />}
             </div>
             <img src={logo} alt='logo' />
             <Menu />

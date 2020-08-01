@@ -98,10 +98,9 @@
         text-align: right;
     }  
     &__calc{
-        width: 40px;
+        width: 60px;
         text-align: center;
         max-height: 40px;
-        margin: 0 -5px 0 -10px;
         font-size: 40px;
         font-weight: 700;
     }
@@ -110,25 +109,50 @@
 .card__control{
     display: flex;
     justify-content: space-between;
-    width: 90%;
+    width: 80%;
     position: absolute;
     bottom: 2%;
-    left: 5%;
+    left: 10%;
     align-items: center;
     &__btn{
-        width: 40px;
-        max-height: 40px;
-        background-color: #fff;
-        font-size: 40px;
-        font-weight: 700;
-        display: flex;
-        align-items: center;
-        border: none;
-        outline: none;
+        width: 20px;
+        height: 20px;
+        margin-top: 10px;
+        position: relative;
+        cursor: pointer;
+        &__minus::before{
+            content: '';
+            background-color: $mainColor;
+            width: 20px;
+            height: 4px;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+        }
+        &__plus::before{
+            content: '';
+            background-color: $mainColor;
+            width: 20px;
+            height: 4px;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+        }
+        &__plus::after{
+            content: '';
+            background-color: $mainColor;
+            width: 4px;
+            height: 20px;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
     }
     &__wrapper{
         display: flex;
         justify-content: center;
-
     }
 }
