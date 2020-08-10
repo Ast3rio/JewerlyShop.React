@@ -8,7 +8,7 @@ import SubscribeContainer from './Subscribe/SubscribeContainer';
 
 const Footer = () => {
     return (
-        <footer className={s.footer}>
+        <footer className={s.footer + ' ' + 'container'}>
             <div className={s.footer__top}>
                 <FooterMenu />
                 <FooterSocial />

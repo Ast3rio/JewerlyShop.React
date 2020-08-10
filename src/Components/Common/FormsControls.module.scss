@@ -8,7 +8,7 @@
     border: $errorColor 3px solid;
     border-radius: 30px;
     box-shadow: 3px 3px 8px $errorColor;
-    font-size: 12px;
+    font-size: 1.2rem;
     color: $errorColor;
     width: 240px;
     height: 40px;
@@ -23,13 +23,18 @@
 
 .btn{
     height: 40px;
-    background-color: #000;
+    background-color: $mainColor;
+    border-radius: 5px;
+    border: 2px solid #000;
     color: #fff;
-    border: none;
     cursor: pointer;
     transition: all 0.5s;
+    font-size: 1.6rem;
     &:hover{
-        background-color: $mainColor; 
+        box-shadow: 0px 0px 24px -4px rgba(0,0,0,0.72);
+    }
+    &:active{
+        transform: translate(2px, 2px);
     }
 }
 

@@ -1,7 +1,8 @@
 import React from 'react';
 import s from './Card.module.scss';
 import Paginator from '../../Common/Paginator/Paginator';
-import { CardFunctionalContainer } from './CardFunctionalContainer';
+import CardFunctional from './CardFunctional';
+
 
 
 
@@ -14,7 +15,7 @@ const Card = (props) => {
                 props.card.map(c =>
                     <li className={s.card} key={c.id}>
                         <div className={s.img}></div>
-                        <CardFunctionalContainer addToCart={props.addToCart} upSumprice={props.upSumprice} downSumprice={props.downSumprice} card={props.card} c={c} props={props} />
+                        <CardFunctional addGoodsToCart={props.addGoodsToCart} upSumprice={props.upSumprice} downSumprice={props.downSumprice} cart={props.cart} card={props.card} c={c} props={props} />
                     </li>)
             }
             </ul >

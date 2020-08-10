@@ -25,16 +25,15 @@ const Header = (props) => {
         setSearch(false);
     };
 
-
     return (
-        <header className={s.header}>
+        <header className={s.header + ' ' + 'container'}>
             <div className={s.top}>
                 <FontAwesomeIcon className={s.search + ' ' + s.icon_style} onClick={openSearch} icon={faSearch} />
                 <div className={s.cart__wrapper}>
-                    <div className={s.cart__number}>{props.totalCountInCart}</div>
+                    <div className={s.cart__number}>{props.cart.length}</div>
                     <FontAwesomeIcon className={s.cart + ' ' + s.icon_style} onClick={openCart} icon={faShoppingCart} />
                 </div>
-                {cart && <Cart card={props.card} closeCart={closeCart} deleteFromCart={props.deleteFromCart} />}
+                {cart && <Cart cart={props.cart} closeCart={closeCart}/>}
                 {search && <Search closeSearch={closeSearch} />}
             </div>
             <img src={logo} alt='logo' />

@@ -1,112 +1,97 @@
-@import '../../../vars';
+@import "../../../vars";
 
-.wrapper{
+.wrapper {
     display: grid;
-    grid-template-columns: 30% 30% 30%;
+    grid-template-columns: auto auto auto;
     grid-column-gap: 40px;
     grid-row-gap: 30px;
+    padding-top: 3%;
 }
 
-.card{
+.card {
     position: relative;
-    width: 350px;
-    height: 650px;
+    max-width: 250px;
+    height: 400px;
     transition: all 0.5s;
-    &:hover{
-        box-shadow: 0px 0px 24px -4px rgba(0,0,0,0.72);
+    &:hover {
+        box-shadow: 0px 0px 24px -4px rgba(0, 0, 0, 0.72);
+    }
+    h6 {
+        padding-top: 10px;
+        font-size: 2.4rem;
+        font-weight: 400;
     }
 }
 
-.img{
+.img {
     width: 100%;
-    height: 300px;
+    height: 150px;
     background-color: #000;
 }
 
-.top{
-    margin: 20px 0 10px 0;
-    border-bottom: 2px solid $mainColor;
+.top {
     display: flex;
     justify-content: space-between;
-}
-
-.bottom{
+    padding: 10px 0 0 0;
     width: 90%;
     margin: 0 auto;
-    li{
-        display: flex;
-        justify-content: space-between;
+    border-bottom: 1px solid $mainColor;
+}
+
+.bottom {
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 10px;
+    li {
+        display: block;
         margin-bottom: 10px;
-        &:last-child{
-            margin-bottom: 0;
-        }
-    }
-    &__list{
-        text-transform: none;
-        font-weight: 400;
-        max-height: 22px;
-        text-align: center;
-        width: 150px;
-        border-bottom: 1px solid $mainColor;
-        border-radius: 0 0 10px 10px;
+        font-size: 1.5rem;
     }
 }
 
-
-.card_btn{
+.btn {
     transition: 0.5s;
     padding: 0 5%;
     width: 120px;
     display: inline-block;
 }
 
-.articles{
+.articles {
     width: 90%;
     min-height: 1000px;
     padding-left: 2%;
 }
 
-
-.card__input__style{
+.style {
     background-color: #fff;
     padding: 0;
     border: none;
-    &__title{
-        text-align: center;
-        font-weight: 700;
-        width: 100%;
-        font-size: 32px;
-    }
-    &__price{
-        width: 150px;
-        padding-left: 20px;
-        font-size: 24px;
-        font-weight: 700;
-    }
-    &__status{
-        width: 150px;
-        text-align: right;
-        padding-right: 20px;
-        font-family: $cursiveFont;
-        font-size: 18px;
-    }
-    &__descr{
-        display: inline-block;
-        width: 140px; 
-        font-weight: 700;
-        max-height: 20px;
-        text-align: right;
-    }  
-    &__calc{
-        width: 60px;
-        text-align: center;
-        max-height: 40px;
-        font-size: 40px;
-        font-weight: 700;
-    }
 }
 
-.card__control{
+.title {
+    text-align: center;
+    font-weight: 700;
+    width: 100%;
+    font-size: 3.2rem;
+}
+.price {
+    font-size: 24px;
+    font-weight: 700;
+}
+.status {
+    display: flex;
+    align-items: center;
+    font-family: $cursiveFont;
+    font-size: 1.8rem;
+}
+.calc {
+    text-align: center;
+    font-size: 2.4rem;
+    font-weight: 700;
+    width: 40px;
+}
+
+.control {
     display: flex;
     justify-content: space-between;
     width: 80%;
@@ -114,45 +99,49 @@
     bottom: 2%;
     left: 10%;
     align-items: center;
-    &__btn{
-        width: 20px;
-        height: 20px;
-        margin-top: 10px;
+    &__btn {
+        width: 15px;
+        height: 15px;
+        margin-top: 12px;
         position: relative;
         cursor: pointer;
-        &__minus::before{
-            content: '';
+        &__minus::before {
+            content: "";
             background-color: $mainColor;
-            width: 20px;
-            height: 4px;
+            width: 15px;
+            height: 2px;
             position: absolute;
             top: 50%;
             left: 0;
             transform: translateY(-50%);
         }
-        &__plus::before{
-            content: '';
+        &__plus::before {
+            content: "";
             background-color: $mainColor;
-            width: 20px;
-            height: 4px;
+            width: 15px;
+            height: 2px;
             position: absolute;
             top: 50%;
             left: 0;
             transform: translateY(-50%);
         }
-        &__plus::after{
-            content: '';
+        &__plus::after {
+            content: "";
             background-color: $mainColor;
-            width: 4px;
-            height: 20px;
+            width: 2px;
+            height: 15px;
             position: absolute;
             top: 0;
             left: 50%;
             transform: translateX(-50%);
         }
     }
-    &__wrapper{
+    &__wrapper {
         display: flex;
         justify-content: center;
     }
+}
+
+.green {
+    color: #007d00;
 }

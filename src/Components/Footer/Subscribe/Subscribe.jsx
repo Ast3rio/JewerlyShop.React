@@ -9,13 +9,13 @@ import { useEffect } from 'react';
 
 const Subscribe = ({setSubscribe, subscribe}) => {
 
+    let [modalWindow, setModalWindow] = useState(false);
+
     let onSubmit = (dataForm) => {
         setSubscribe(true);
         setModalWindow(true);
         console.log('Пользователь подписался: ' + dataForm.email);
     }
-
-    let [modalWindow, setModalWindow] = useState(false);
 
     useEffect(() => {
         setTimeout(() => {

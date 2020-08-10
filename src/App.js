@@ -13,17 +13,21 @@ import StoreContainer from './Components/Store/StoreContainer';
 
 function App() {
   return (
-    <div className="container">
+    <div>
       <HeaderContainer />
-      <Switch>
-        <Route path='/main' component={MainContainer} />
-        <Route path='/store' component={StoreContainer} />
-        <Route path='/brand' component={Brand} />
-        <Route path='/delivery' component={Delivery} />
-        <Route path='/refund' component={Refund} />
-        <Route path='/contacts' component={Contacts} />
-        <Redirect from="/" to="/main" />
-      </Switch>
+      <hr />
+      <div className='container'>
+        <Switch>
+          <Route path='/main' component={MainContainer} />
+          <Route path='/store' component={StoreContainer} />
+          <Route path='/brand' component={Brand} />
+          <Route path='/delivery' component={Delivery} />
+          <Route path='/refund' component={Refund} />
+          <Route path='/contacts' component={Contacts} />
+          <Redirect from="/" to="/main" />
+        </Switch>
+      </div>
+      <hr />
       <Footer />
     </div>
   );

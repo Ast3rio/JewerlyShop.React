@@ -15,15 +15,87 @@ const Main = () => {
     return (
         <section className={s.wrapper}>
             <div className='row row-cols-3'>
-                <div className={"col" + ' ' + s.effects}><a href="#top"><img src={ring} alt="ring" className={s.img} /><div className={s.title}><p>Кольца</p></div></a></div>
-                <div className={"col" + ' ' + s.effects}><a href="#top"><img src={shackle} alt="ring" className={s.img} /><div className={s.title}><p>Серьги</p></div></a></div>
-                <div className={"col" + ' ' + s.effects}><a href="#top"><img src={bracelet} alt="ring" className={s.img} /><div className={s.title}><p>Браслеты</p></div></a></div>
-                <div className={"col" + ' ' + s.effects}><a href="#top"><img src={stud} alt="ring" className={s.img} /><div className={s.title}><p>Запонки</p></div></a></div>
-                <div className={"col" + ' ' + s.effects}><a href="#top"><img src={manjewerly} alt="ring" className={s.img} /><div className={s.title}><p>Мужские украшения</p></div></a></div>
-                <div className={"col" + ' ' + s.effects}><a href="#top"><img src={womanjewerly} alt="ring" className={s.img} /><div className={s.title}><p>Женские украшения</p></div></a></div>
-                <div className={"col" + ' ' + s.effects}><a href="#top"><img src={newjewerly} alt="ring" className={s.img} /><div className={s.title}><p>Новое</p></div></a></div>
-                <div className={"col" + ' ' + s.effects}><a href="#top"><img src={comand} alt="ring" className={s.img} /><div className={s.title}><p>О нас</p></div></a></div>
-                <div className={"col" + ' ' + s.effects}><a href="#top"><img src={contacts} alt="ring" className={s.img} /><div className={s.title}><p>Контакты</p></div></a></div>
+                <div className={"col" + ' ' + s.effects + ' ' + s.item__wrapper}><img src={ring} alt="ring" className={s.img} />
+                    <div className={s.info}>
+                        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum tempore veritatis omnis distinctio dignissimos.
+                        Commodi officia natus id repellat quas,
+                        saepe eius modi veritatis accusantium dignissimos laborum soluta asperiores sapiente.</p>
+                        <a href="#top">Узнать больше</a>
+                    </div>
+                    <div className={s.title}><p>Кольца</p></div>
+                </div>
+                <div className={"col" + ' ' + s.effects + ' ' + s.item__wrapper}><img src={shackle} alt="ring" className={s.img} />
+                    <div className={s.info}>
+                        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum tempore veritatis omnis distinctio dignissimos.
+                        Commodi officia natus id repellat quas,
+                        saepe eius modi veritatis accusantium dignissimos laborum soluta asperiores sapiente.</p>
+                        <a href="#top">Узнать больше</a>
+                    </div>
+                    <div className={s.title}><p>Серьги</p></div>
+                </div>
+                <div className={"col" + ' ' + s.effects + ' ' + s.item__wrapper}><img src={bracelet} alt="ring" className={s.img} />
+                    <div className={s.info}>
+                        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum tempore veritatis omnis distinctio dignissimos.
+                        Commodi officia natus id repellat quas,
+                        saepe eius modi veritatis accusantium dignissimos laborum soluta asperiores sapiente.</p>
+                        <a href="#top">Узнать больше</a>
+                    </div>
+                    <div className={s.title}><p>Браслеты</p></div>
+                </div>
+                <div className={"col" + ' ' + s.effects + ' ' + s.item__wrapper}><img src={stud} alt="ring" className={s.img} />
+                    <div className={s.info}>
+                        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum tempore veritatis omnis distinctio dignissimos.
+                        Commodi officia natus id repellat quas,
+                        saepe eius modi veritatis accusantium dignissimos laborum soluta asperiores sapiente.</p>
+                        <a href="#top">Узнать больше</a>
+                    </div>
+                    <div className={s.title}><p>Запонки</p></div>
+                </div>
+                <div className={"col" + ' ' + s.effects + ' ' + s.item__wrapper}><img src={manjewerly} alt="ring" className={s.img} />
+                    <div className={s.info}>
+                        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum tempore veritatis omnis distinctio dignissimos.
+                        Commodi officia natus id repellat quas,
+                        saepe eius modi veritatis accusantium dignissimos laborum soluta asperiores sapiente.</p>
+                        <a href="#top">Узнать больше</a>
+                    </div>
+                    <div className={s.title}><p>Мужские украшения</p></div>
+                </div>
+                <div className={"col" + ' ' + s.effects + ' ' + s.item__wrapper}><img src={womanjewerly} alt="ring" className={s.img} />
+                    <div className={s.info}>
+                        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum tempore veritatis omnis distinctio dignissimos.
+                        Commodi officia natus id repellat quas,
+                        saepe eius modi veritatis accusantium dignissimos laborum soluta asperiores sapiente.</p>
+                        <a href="#top">Узнать больше</a>
+                    </div>
+                    <div className={s.title}><p>Женские украшения</p></div>
+                </div>
+                <div className={"col" + ' ' + s.effects + ' ' + s.item__wrapper}><img src={newjewerly} alt="ring" className={s.img} />
+                    <div className={s.info}>
+                        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum tempore veritatis omnis distinctio dignissimos.
+                        Commodi officia natus id repellat quas,
+                        saepe eius modi veritatis accusantium dignissimos laborum soluta asperiores sapiente.</p>
+                        <a href="#top">Узнать больше</a>
+                    </div>
+                    <div className={s.title}><p>Новое</p></div>
+                </div>
+                <div className={"col" + ' ' + s.effects + ' ' + s.item__wrapper}><img src={comand} alt="ring" className={s.img} />
+                    <div className={s.info}>
+                        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum tempore veritatis omnis distinctio dignissimos.
+                        Commodi officia natus id repellat quas,
+                        saepe eius modi veritatis accusantium dignissimos laborum soluta asperiores sapiente.</p>
+                        <a href="#top">Узнать больше</a>
+                    </div>
+                    <div className={s.title}><p>О нас</p></div>
+                </div>
+                <div className={"col" + ' ' + s.effects + ' ' + s.item__wrapper}><img src={contacts} alt="ring" className={s.img} />
+                    <div className={s.info}>
+                        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum tempore veritatis omnis distinctio dignissimos.
+                        Commodi officia natus id repellat quas,
+                        saepe eius modi veritatis accusantium dignissimos laborum soluta asperiores sapiente.</p>
+                        <a href="#top">Узнать больше</a>
+                    </div>
+                    <div className={s.title}><p>Контакты</p></div>
+                </div>
             </div>
         </section>
     )
