@@ -33,7 +33,7 @@ const Header = (props) => {
                     <div className={s.cart__number}>{props.cart.length}</div>
                     <FontAwesomeIcon className={s.cart + ' ' + s.icon_style} onClick={openCart} icon={faShoppingCart} />
                 </div>
-                {cart && <Cart cart={props.cart} closeCart={closeCart}/>}
+                {cart && <Cart cart={props.cart} removeGoodsFromCart={props.removeGoodsFromCart} closeCart={closeCart}/>}
                 {search && <Search closeSearch={closeSearch} />}
             </div>
             <img src={logo} alt='logo' />
