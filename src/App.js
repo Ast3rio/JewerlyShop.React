@@ -24,7 +24,7 @@ function App() {
           <Route path='/delivery' component={Delivery} />
           <Route path='/refund' component={Refund} />
           <Route path='/contacts' component={Contacts} />
-          <Redirect from="/" to="/main" />
+          <Redirect from="/*" to="/main" />
         </Switch>
       </div>
       <hr />

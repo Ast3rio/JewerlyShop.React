@@ -5,20 +5,17 @@
 }
 
 .error{
-    border: $errorColor 3px solid;
-    border-radius: 30px;
-    box-shadow: 3px 3px 8px $errorColor;
-    font-size: 1.2rem;
-    color: $errorColor;
+    border: $mainColor 1px solid;
+    font-size: 1.4rem;
     width: 240px;
     height: 40px;
-    position: absolute;
+    text-align: center;
+    padding: 5px 20px;
+    width: 40%;
+    margin: 0 auto;
+    margin-top: 2%;
+    display: block;
     text-transform: none;
-    top: 0;
-    right: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .btn{

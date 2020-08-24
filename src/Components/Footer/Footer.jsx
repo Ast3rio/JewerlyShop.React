@@ -15,7 +15,7 @@ const Footer = () => {
                 <FooterContacts />
                 <SubscribeContainer />
             </div>
-            <p>Chernyshovu jewerly</p>
+            <p>Chernyshovu jewelry</p>
             <p>2020</p>
         </footer>
     )

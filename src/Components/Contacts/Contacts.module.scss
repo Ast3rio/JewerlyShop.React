@@ -3,6 +3,7 @@
 .contacts{
     grid-area: content;
     min-height: 700px;
+    font-size: 1.6rem;
     &__wrapper{
         display: flex;
         justify-content: space-between;
@@ -11,6 +12,8 @@
 
 .list{
     display: block;
+    font-size: 2rem;
+    font-family: $cursiveFont;
 }
 
 .block{

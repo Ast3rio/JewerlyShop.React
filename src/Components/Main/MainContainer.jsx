@@ -1,9 +1,9 @@
 import { connect } from "react-redux"
 import Main from "./Main"
 
-let mapStateToProps = () => {
+let mapStateToProps = (state) => {
     return {
-        
+        blocks: state.mainPage.blocks,
     }
 }
 

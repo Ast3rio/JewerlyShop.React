@@ -4,6 +4,7 @@ import Sidebar from './Sidebar/Sidebar';
 import CardContainer from './Card/CardContainer';
 
 
+
 const Store = ()=>{
     return(
         <section className={s.store}>

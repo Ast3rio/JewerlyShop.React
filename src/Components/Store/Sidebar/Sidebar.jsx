@@ -1,31 +1,32 @@
 import React from 'react';
 import s from './Sidebar.module.scss';
 import { Button } from '../../Common/FormsControls';
+import { NavLink } from 'react-router-dom';
 
 const Sidebar = () => {
     return (
         <div className={s.sidebar__wrapper}>
             <ul className={s.sidebar}>
                 <li>
-                    <a href="#top">Все товары</a>
+                    <NavLink activeClassName={s.active} to="/store/all">Все товары</NavLink>
                 </li>
                 <li>
-                    <a href="#top">Кольца</a>
+                    <NavLink activeClassName={s.active} to="/store/rings">Кольца</NavLink>
                 </li>
                 <li>
-                    <a href="#top">Серьги</a>
+                    <NavLink activeClassName={s.active} to="/store/shackles">Серьги</NavLink>
                 </li>
                 <li>
-                    <a href="#top">Браслеты</a>
+                    <NavLink activeClassName={s.active} to="/store/bracelets">Браслеты</NavLink>
                 </li>
                 <li>
-                    <a href="#top">Мужские украшения</a>
+                    <NavLink activeClassName={s.active} to="/store/men_jewelry">Мужские украшения</NavLink>
                 </li>
                 <li>
-                    <a href="#top">Женские украшения</a>
+                    <NavLink activeClassName={s.active} to="/store/women_jewelry">Женские украшения</NavLink>
                 </li>
                 <li>
-                    <a href="#top">Новое</a>
+                    <NavLink activeClassName={s.active} to="/store/new">Новое</NavLink>
                 </li>
             </ul>
             <div className={s.products__filter}>

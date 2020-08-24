@@ -1,19 +1,19 @@
-@import '../../../vars';
+@import "../../../vars";
 
-.sidebar{
+.sidebar {
     text-transform: uppercase;
     white-space: nowrap;
     width: 270px;
     margin-top: 5px;
-    li{
+    li {
         display: block;
         margin-bottom: 10px;
         font-size: 1.5rem;
         margin-bottom: 8px;
-        &:last-child{
+        &:last-child {
             margin-bottom: 0;
         }
-        a{
+        a {
             display: block;
             color: #fff;
             background-color: $mainColor;
@@ -22,19 +22,22 @@
             border-bottom: 2px solid #000;
             border-left: 2px solid #000;
             transition: all 0.5s ease;
-            &:hover{
+            &:hover {
                 width: 100%;
             }
+        }
+        .active {
+            width: 100%;
         }
     }
 }
 
-.products__filter{
+.products__filter {
     margin-top: 40px;
     width: 100%;
     min-height: 500px;
     text-align: center;
-    h4{
+    h4 {
         text-transform: uppercase;
         border-bottom: 1px solid $mainColor;
         width: 100%;
@@ -42,33 +45,54 @@
         font-style: italic;
         font-weight: 700;
     }
-    p{
+    p {
         font-family: $cursiveFont;
         font-weight: 700;
         font-size: 2.4rem;
         margin-top: 10px;
     }
-    input{
+    input {
         width: 60px;
         text-align: center;
         height: 40px;
         margin-right: 8px;
     }
-    select{
+    select {
         width: 80%;
     }
-    &__price{
+    &__price {
         width: 95%;
         margin: 0 auto;
         display: flex;
         justify-content: center;
         margin-bottom: 10px;
     }
-    &__width{
+    &__width {
         width: 95%;
         margin: 0 auto;
         display: flex;
         justify-content: center;
         margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 940px) {
+    .sidebar__wrapper{
+        display: flex;
+        justify-content: space-between;
+    }
+    .products__filter {
+        width: 300px;
+        min-height: 200px;
+        margin-top: 0;
+    }
+}
+
+@media (max-width: 610px){
+    .sidebar{
+        display: none;
+    }
+    .sidebar__wrapper{
+        justify-content: center;
     }
 }

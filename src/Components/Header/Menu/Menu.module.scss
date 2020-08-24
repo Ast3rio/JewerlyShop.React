@@ -26,3 +26,9 @@
     color: #000 !important;
     border-bottom: 1px solid $mainColor;
 }
+
+@media (max-width: 860px){
+    .menu{
+        display: none;
+    }
+}

@@ -1,0 +1,30 @@
+@import '../../../vars';
+
+.menu{
+    width: 150px;
+    text-align: center;
+    background-color: #666;
+    min-height: 325px;
+    position: absolute;
+    padding: 10px;
+    top: 15px;
+    right: 25px;
+    li{
+        display: block;
+        padding: 12px 0;
+        border-bottom: 2px solid $mainColor;
+    }
+	a{
+        color: #000;
+        font-size: 1.4rem;
+        text-transform: uppercase;
+		&:hover{
+			color: #fff;
+            transition: 0.15s;
+		}
+	}
+}
+
+.active{
+    color: #fff !important;
+}

@@ -2,3 +2,9 @@
     display: flex;
     justify-content: start;
 }
+
+@media (max-width: 940px){
+    .store_wrapper{
+        display: block;
+    }
+}

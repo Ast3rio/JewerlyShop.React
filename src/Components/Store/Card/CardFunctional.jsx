@@ -10,11 +10,11 @@ const CardFunctional = ({ addGoodsToCart, downSumprice, upSumprice, c, cart, ...
 
     return (
         <div>
-            <h6 className={s.style + ' ' + s.title}>{c.title}</h6>
+            <h6 className={s.card_title}>{c.title}</h6>
             <div className={s.top}>
-                <div className={s.style + ' ' + s.price}>{c.price + ' $'}</div>
-                {c.status === 'есть в наличии' ? <div className={s.style + ' ' + s.status + ' ' + s.green}>{c.status}</div>
-                    : <div className={s.style + ' ' + s.status}>{c.status}</div>}
+                <div className={s.price}>{c.price + ' $'}</div>
+                {c.status === 'есть в наличии' ? <div className={s.status + ' ' + s.green}>{c.status}</div>
+                    : <div className={s.status}>{c.status}</div>}
             </div>
             <ul className={s.bottom}>
                 <li>Ширина основы: {c.descr.width}</li>
@@ -25,7 +25,7 @@ const CardFunctional = ({ addGoodsToCart, downSumprice, upSumprice, c, cart, ...
                 <div className={s.control__wrapper}>
                     <div className={s.control__btn + ' ' + s.control__btn__minus}
                         onClick={() => downSumprice(c.id, c.sumprice > 1 ? c.sumprice - 1 : c.sumprice = 1)}></div>
-                    <div className={s.style + ' ' + s.calc}>{c.sumprice}</div>
+                    <div className={s.calc}>{c.sumprice}</div>
                     <div className={s.control__btn + ' ' + s.control__btn__plus}
                         onClick={() => upSumprice(c.id, c.sumprice < 10 ? c.sumprice + 1 : c.sumprice = 10)}></div>
                 </div>
