@@ -1,3 +1,5 @@
+@import '../../vars';
+
 .brand{
     grid-area: content;
     min-height: 800px;
@@ -5,8 +7,45 @@
     font-size: 1.6rem;
 }
 
-span{
+.title{
+    position: relative;
     text-transform: uppercase;
     font-size: 2.8rem;
     font-weight: 700;
+    text-align: center;
+    &::before{
+        content: '';
+        width: 400px;
+        height: 2px;
+        position: absolute;
+        top: 50%;
+        left: 170px;
+        background-color: $mainColor;
+    }
+    &::after{
+        content: '';
+        width: 400px;
+        height: 2px;
+        position: absolute;
+        top: 50%;
+        right: 170px;
+        background-color: $mainColor;
+    }
+}
+
+.img{
+    float: left;
+    width: 400px;
+    margin: 20px;
+}
+
+.text{
+    text-align: justify;
+    text-indent: 2.5em;
+    margin-top: 2%;
+}
+
+.video{
+    margin: 0 auto; 
+    padding: 2% 0;
 }

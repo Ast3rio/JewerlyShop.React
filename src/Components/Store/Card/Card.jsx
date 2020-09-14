@@ -3,9 +3,9 @@ import s from './Card.module.scss';
 import Paginator from '../../Common/Paginator/Paginator';
 import CardFunctional from './CardFunctional';
 import { GOODS_TYPES } from '../../../Redux/store-reducer';
-import { Route, Redirect } from 'react-router-dom';
+import { Route, Redirect, NavLink } from 'react-router-dom';
 import Switch from 'react-bootstrap/esm/Switch';
-
+import Good from '../Good/Good';
 
 
 
@@ -21,6 +21,7 @@ const Card = (props) => {
                 <Route path='/store/men_jewelry' render={() => <CardMenJewelry card={props.card} {...props} />} />
                 <Route path='/store/women_jewelry' render={() => <CardWomenJewelry card={props.card} {...props} />} />
                 <Route path='/store/new' render={() => <CardNew card={props.card} {...props} />} />
+                <Route path={`/store/good/:id`} component={Good} />
                 <Redirect from="/store" to="/store/all" />
             </Switch>
         </div>
@@ -32,11 +33,11 @@ class CardAll extends React.Component {
         return (
             <ul className={s.wrapper}> {
                 this.props.card.map(c =>
-                    <li className={s.card} key={c.id}>
+                    <NavLink key={c.id} to={`/store/good/${c.id}`}><li className={s.card} >
                         <div className={s.img}></div>
                         <CardFunctional addGoodsToCart={this.props.addGoodsToCart} upSumprice={this.props.upSumprice}
                             downSumprice={this.props.downSumprice} cart={this.props.cart} card={this.props.card} c={c} props={this.props} />
-                    </li>)
+                    </li></NavLink>)
             }
             </ul >
         )
@@ -48,11 +49,11 @@ class CardRings extends React.Component {
         return (
             <ul className={s.wrapper}> {
                 this.props.card.map(c => c.type === GOODS_TYPES.RING &&
-                    <li className={s.card} key={c.id}>
+                    <NavLink key={c.id} to={`/store/good/${c.id}`}> <li className={s.card}>
                         <div className={s.img}></div>
                         <CardFunctional addGoodsToCart={this.props.addGoodsToCart} upSumprice={this.props.upSumprice}
                             downSumprice={this.props.downSumprice} cart={this.props.cart} card={this.props.card} c={c} props={this.props} />
-                    </li>)
+                    </li></NavLink>)
             }
             </ul >
         )
@@ -64,11 +65,11 @@ class CardShackles extends React.Component {
         return (
             <ul className={s.wrapper}> {
                 this.props.card.map(c => c.type === GOODS_TYPES.SHACKLE &&
-                    <li className={s.card} key={c.id}>
+                    <NavLink key={c.id} to={`/store/good/${c.id}`}> <li className={s.card} key={c.id}>
                         <div className={s.img}></div>
                         <CardFunctional addGoodsToCart={this.props.addGoodsToCart} upSumprice={this.props.upSumprice}
                             downSumprice={this.props.downSumprice} cart={this.props.cart} card={this.props.card} c={c} props={this.props} />
-                    </li>)
+                    </li></NavLink>)
             }
             </ul >
         )

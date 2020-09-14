@@ -6,7 +6,7 @@ import { Button } from '../../Common/FormsControls';
 
 
 const CardFunctional = ({ addGoodsToCart, downSumprice, upSumprice, c, cart, ...props }) => {
-
+    
 
     return (
         <div>
@@ -17,11 +17,13 @@ const CardFunctional = ({ addGoodsToCart, downSumprice, upSumprice, c, cart, ...
                     : <div className={s.status}>{c.status}</div>}
             </div>
             <ul className={s.bottom}>
-                <li>Ширина основы: {c.descr.width}</li>
-                <li>Материал: {c.descr.material}</li>
+                <li>Ширина основы: {c.width}</li>
+                <li>Материал: {c.material}</li>
             </ul>
             <div className={s.control}>
-                <Button label={'В корзину'} onClick={(e) => { e.preventDefault(); addGoodsToCart(cart.concat({id: c.id, title: c.title, price: c.price, sumprice: c.sumprice})) }} className={s.card_btn} />
+                <Button label={'В корзину'}
+                    onClick={(e) => { e.preventDefault(); addGoodsToCart(cart.concat({ id: c.id, title: c.title, price: c.price, sumprice: c.sumprice })) }}
+                    className={s.card_btn} />
                 <div className={s.control__wrapper}>
                     <div className={s.control__btn + ' ' + s.control__btn__minus}
                         onClick={() => downSumprice(c.id, c.sumprice > 1 ? c.sumprice - 1 : c.sumprice = 1)}></div>

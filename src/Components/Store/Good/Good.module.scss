@@ -1,0 +1,59 @@
+@import "../../../vars";
+
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.6rem;
+}
+
+.img {
+    width: 400px;
+    height: 250px;
+    background-color: #000;
+    flex: 0 0 auto;
+    margin-right: 2%;
+    text-align: center;
+    font-size: 4rem;
+    color: #fff;
+}
+
+.slider {
+    width: 400px;
+    height: 250px;
+    margin-right: 20px;
+}
+
+.info {
+    flex: 1 1 auto;
+    hr {
+        width: 100%;
+        height: -0.5px;
+        background-color: $mainColor;
+    }
+}
+
+.title {
+    text-transform: uppercase;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.price {
+    font-size: 3.5rem;
+    font-weight: 700;
+}
+
+.status {
+    font-family: $cursiveFont;
+    font-size: 2.2rem;
+}
+
+.green {
+    color: $green;
+}
+
+.descr {
+    li {
+        display: block;
+    }
+}

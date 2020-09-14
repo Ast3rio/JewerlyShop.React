@@ -3,7 +3,7 @@ import s from './Cart.module.scss';
 import { Button } from '../Common/FormsControls';
 
 
-const Cart = ({ closeCart, removeGoodsFromCart, ...props }) => {
+const Cart = ({ closeCart, removeGoodsFromCart, removeAllGoods, ...props }) => {
 
     return (
         <div className={s.wrapper} >
@@ -26,7 +26,7 @@ const Cart = ({ closeCart, removeGoodsFromCart, ...props }) => {
                         </div>
                     </li>
                 )}
-                {props.cart.length === 0 ? <div>Корзина пуста</div> : <div><Button label='Оформить заказ' className={s.btn_offer} /><Button label='Очистить корзину' className={s.btn_remove} /></div>}
+                {props.cart.length === 0 ? <div>Корзина пуста</div> : <div><Button label='Оформить заказ' className={s.btn_offer} /><Button label='Очистить корзину' onClick={() => {let cart = []; removeAllGoods(cart) } } className={s.btn_remove} /></div>}
             </ul>
             <div className={s.bottom}></div>
         </div>

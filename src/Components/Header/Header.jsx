@@ -49,7 +49,7 @@ const Header = (props) => {
                     <div className={s.close_hamburger + ' ' + (mobileMenu ? s.deactive_menu : null)} ></div>
                 </div>
                 {mobileMenu && <MobileMenu closeMobileMenu={closeMobileMenu} />}
-                {cart && <Cart cart={props.cart} removeGoodsFromCart={props.removeGoodsFromCart} closeCart={closeCart}/>}
+                {cart && <Cart cart={props.cart} removeGoodsFromCart={props.removeGoodsFromCart} closeCart={closeCart} removeAllGoods={props.removeAllGoods}/>}
                 {search && <Search closeSearch={closeSearch} />}
             </div>
             <img src={logo} alt='logo' />
