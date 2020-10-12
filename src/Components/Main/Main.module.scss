@@ -23,7 +23,7 @@
     background-color: #000;
     &:hover {
         .info {
-            transform: translateX(0);
+            transform: translateY(0);
         }
     }
 }
@@ -33,7 +33,7 @@
     padding: 20px 20px 50px;
     color: #fff;
     background-color: rgba($accentColor, 0.9);
-    transform: translateX(100%);
+    transform: translateY(-100%);
     position: absolute;
     top: 0;
     left: 0;

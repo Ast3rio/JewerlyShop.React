@@ -1,19 +1,19 @@
 import React from 'react';
-import s from './Footer.module.scss';
+import style from './Footer.module.scss';
 import FooterContacts from './FooterContacts/FooterContacts';
 import FooterMenu from './FooterMenu/FooterMenu';
 import FooterSocial from './FooterSocial/FooterSocial';
-import SubscribeContainer from './Subscribe/SubscribeContainer';
+import Subscribe from './Subscribe/Subscribe';
 
 
 const Footer = () => {
     return (
-        <footer className={s.footer + ' ' + 'container'}>
-            <div className={s.footer__top}>
+        <footer className={style.footer + ' ' + 'container'}>
+            <div className={style.footer__top}>
                 <FooterMenu />
                 <FooterSocial />
                 <FooterContacts />
-                <SubscribeContainer />
+                <Subscribe />
             </div>
             <p>Chernyshovu jewelry</p>
             <p>2020</p>

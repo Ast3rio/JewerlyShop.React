@@ -2,21 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './fonts/icofont/icofont.min.css';
+import './Fonts/icofont/icofont.min.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import { HashRouter } from 'react-router-dom';
-import { Provider } from 'react-redux';
-import store from './Redux/store';
 
 
 
 ReactDOM.render(
-    <HashRouter>
-      <Provider store={store}>
-        <App />
-      </Provider>
-    </HashRouter>,
+  <App />,
   document.getElementById('root')
 );
 

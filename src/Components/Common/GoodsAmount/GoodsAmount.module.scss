@@ -1,0 +1,32 @@
+@import '../../../vars';
+@import '../../../mixins';
+
+.control {
+    &__btn {
+        width: 15px;
+        height: 15px;
+        margin-top: 12px;
+        position: relative;
+        cursor: pointer;
+        &__minus::before {
+            @include mathSign(50%, 0, 15px, 2px, translateX(-50%));
+        }
+        &__plus::before {
+            @include mathSign(50%, 0, 15px, 2px, translateY(-50%));
+        }
+        &__plus::after {
+            @include mathSign(0, 50%, 2px, 15px, translateX(-50%));
+        }
+    }
+    &__wrapper {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.calc {
+    text-align: center;
+    font-size: 2.4rem;
+    font-weight: 700;
+    width: 40px;
+}

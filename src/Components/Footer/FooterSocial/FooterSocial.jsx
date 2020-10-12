@@ -1,14 +1,14 @@
 import React from 'react';
-import s from './FooterSocial.module.scss';
+import style from './FooterSocial.module.scss';
 
 const FooterSocial = () =>{
     return(
-        <div className={s.social}>
+        <div className={style.social}>
             Социальные сети:
-            <ul className={s.icons}>
-                <li className={s.list_vk}><a href="#top" className={s.ico + ' ' + s.vk}></a></li>
-                <li className={s.list_telegram}><a href="#top" className={s.ico + ' ' + s.telegram}></a></li>
-                <li className={s.list_instagram}><a href="#top" className={s.ico + ' ' + s.instagram}></a></li>
+            <ul className={style.icons}>
+                <li className={style.list_vk}><a href="#top" className={style.ico + ' ' + style.vk}></a></li>
+                <li className={style.list_telegram}><a href="#top" className={style.ico + ' ' + style.telegram}></a></li>
+                <li className={style.list_instagram}><a href="#top" className={style.ico + ' ' + style.instagram}></a></li>
             </ul>
         </div>
     )

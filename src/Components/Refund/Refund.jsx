@@ -1,9 +1,9 @@
 import React from 'react';
-import s from './Refund.module.scss';
+import style from './Refund.module.scss';
 
 const Refund = ()=>{
     return(
-        <section className={s.refund}>
+        <section className={style.refund}>
             Refund
         </section>
     )

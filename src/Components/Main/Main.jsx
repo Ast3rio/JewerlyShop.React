@@ -1,20 +1,23 @@
 import React from 'react';
-import s from './Main.module.scss';
+import { useSelector } from 'react-redux';
+import style from './Main.module.scss';
 
 
-const Main = (props) => {
+const Main = () => {
+    const blocks = useSelector(state => state.mainPage.blocks);
     return (
-        <section className={s.wrapper}>
-            {props.blocks.map(b => <div key={b.id} className={s.effects + ' ' + s.item__wrapper}><img src={b.image} alt="ring" className={s.img} />
-                <div className={s.info}>
-                    <div className={s.descr}>{b.descr}</div>
-                    <a href="#top" className={s.link}>Узнать больше</a>
+        <section className={style.wrapper}>
+            {blocks.map(block => <div key={block.id} className={style.effects + ' ' + style.item__wrapper}><img src={block.image} alt="ring" className={style.img} />
+                <div className={style.info}>
+                    <div className={style.descr}>{block.descr}</div>
+                    <a href="#top" className={style.link}>Узнать больше</a>
                 </div>
-                <div className={s.title}><p>{b.title}</p></div>
+                <div className={style.title}><p>{block.title}</p></div>
             </div>)}
         </section>
     )
 }
+
 
 
 export default Main;

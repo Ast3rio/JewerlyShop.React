@@ -1,18 +1,23 @@
 import React from 'react';
-import s from './Subscribe.module.scss';
+import style from './Subscribe.module.scss';
 import ModalWindow from '../../Common/ModalWindow';
 import { useState } from 'react';
 import { reduxForm, Field } from 'redux-form';
 import { Input } from '../../Common/FormsControls';
 import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 
-const Subscribe = ({setSubscribe, subscribe}) => {
+const Subscribe = () => {
+
+    const subscribe = useSelector(state => state.footer.subscribe);
+    const setSubscribe = useDispatch();
 
     let [modalWindow, setModalWindow] = useState(false);
 
     let onSubmit = (dataForm) => {
-        setSubscribe(true);
+        let subscribe = true;
+        setSubscribe({type: 'SET_SUBSCRIBE', subscribe});
         setModalWindow(true);
         console.log('Пользователь подписался: ' + dataForm.email);
     }
@@ -24,7 +29,7 @@ const Subscribe = ({setSubscribe, subscribe}) => {
     }, [setTimeout(true)]);
 
     return (
-        <div className={s.subscribe}>
+        <div className={style.subscribe}>
             Подписаться:
             <SubscribeFormContainer onSubmit={onSubmit} modalWindow={modalWindow} subscribe={subscribe} />
         </div>

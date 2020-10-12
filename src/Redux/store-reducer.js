@@ -1,4 +1,4 @@
-import { updateObjectInArray} from "../utils/object-helpers";
+import { updateObjectInArray} from "../Utils/object-helpers";
 
 const SET_CURRENT_PAGE = 'SET_CURRENT_PAGE';
 const UP_SUMPRICE = 'UP_SUMPRICE';

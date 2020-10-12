@@ -1,4 +1,5 @@
 @import '../../../vars';
+@import '../../../mixins';
 
 .social{
     border-right: 1px dotted $mainColor;
@@ -48,30 +49,18 @@
 
 .vk{
     &::before{
-        content: '\ed83';
-        position: absolute;
-        top: 5px;
-        left: 0;
-        transform: translate(-50%);
+        @include socials('\ed83');
     }
 }
 
 .telegram{
     &::before{
-        content: '\ed75';
-        position: absolute;
-        top: 5px;
-        left: 0px;
-        transform: translate(-50%);
+        @include socials('\ed75');
     }
 }
 
 .instagram{
     &::before{
-        content: '\ed46';
-        position: absolute;
-        top: 5px;
-        left: 0px;
-        transform: translate(-50%);
+        @include socials('\ed46');
     }
 }

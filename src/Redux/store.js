@@ -4,12 +4,14 @@ import storePageReducer from "./store-reducer";
 import footerReducer from "./footer-reducer";
 import { reducer as formReducer } from 'redux-form';
 import cartReducer from "./cart-reducer";
+import brandPageReducer from "./brand-reducer";
 
 
 
 let reducers = combineReducers({
     mainPage: mainPageReducer,
     storePage: storePageReducer,
+    brandPage: brandPageReducer,
     cart: cartReducer,
     footer: footerReducer,
     form: formReducer,

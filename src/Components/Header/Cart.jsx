@@ -1,34 +1,52 @@
 import React from 'react';
-import s from './Cart.module.scss';
+import style from './Cart.module.scss';
 import { Button } from '../Common/FormsControls';
+import { useDispatch } from 'react-redux';
 
 
-const Cart = ({ closeCart, removeGoodsFromCart, removeAllGoods, ...props }) => {
+
+const Cart = ({ closeCart, cart }) => {
+
+    const removeAllGoods = useDispatch();
+    const removeGoodsFromCart = useDispatch();
+
+    const removeGood = (goodId) => {
+        let goodIndex = cart.findIndex(({ id }) => id == goodId);
+        removeGoodsFromCart({ type: 'DELETE_GOODS_FROM_CART', goodIndex })
+
+    }
+    const clearCart = () => {
+        let cart = [];
+        removeAllGoods({ type: 'REMOVE_ALL_GOODS', cart });
+    }
 
     return (
-        <div className={s.wrapper} >
-            <div className={s.top}>
+        <div className={style.wrapper} >
+            <div className={style.top}>
                 <div>КОРЗИНА</div>
-                <div className={s.close} onClick={closeCart}>&times;</div>
+                <div className={style.close} onClick={closeCart}>&times;</div>
             </div>
-            <ul className={s.goods_wrapper}>
-                {props.cart.map(c =>
-                    <li key={c.id} className={s.card_list}>
-                        <div className={s.cart_img}></div>
-                        <div className={s.card_info}>
-                            <h3 className={s.cart_title}>{c.title}</h3>
-                            <ul className={s.cart_list}>
-                                <li>Цена товара: {c.price + ' $'} </li>
-                                <li>Количество: {c.sumprice}</li>
-                                <li>Сума к оплате: {c.price * c.sumprice + ' $'}</li>
+            <ul className={style.goods_wrapper}>
+                {cart.map(good =>
+                    <li key={good.id} className={style.card_list}>
+                        <div className={style.cart_img}></div>
+                        <div className={style.card_info}>
+                            <h3 className={style.cart_title}>{good.title}</h3>
+                            <ul className={style.cart_list}>
+                                <li>Цена товара: {good.price + ' $'} </li>
+                                <li>Количество: {good.sumprice}</li>
+                                <li>Сума к оплате: {good.price * good.sumprice + ' $'}</li>
                             </ul>
-                            <Button label={'Удалить'} onClick={() => { let index = props.cart.findIndex(({ id }) => id == c.id); removeGoodsFromCart(index) }} className={s.cart_btn} />
+                            <Button label={'Удалить'} onClick={() => removeGood(good.id)} className={style.cart_btn} />
                         </div>
                     </li>
                 )}
-                {props.cart.length === 0 ? <div>Корзина пуста</div> : <div><Button label='Оформить заказ' className={s.btn_offer} /><Button label='Очистить корзину' onClick={() => {let cart = []; removeAllGoods(cart) } } className={s.btn_remove} /></div>}
+                {cart.length === 0 ? <div>Корзина пуста</div> : <div>
+                    <Button label='Оформить заказ' className={style.btn_offer} />
+                    <Button label='Очистить корзину' onClick={() => clearCart()} className={style.btn_remove} />
+                </div>}
             </ul>
-            <div className={s.bottom}></div>
+            <div className={style.bottom}></div>
         </div>
     )
 }

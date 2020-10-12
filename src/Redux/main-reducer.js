@@ -1,13 +1,13 @@
 
-import img_1 from '../assets/img/main_img/ring.jpg';
-import img_2 from '../assets/img/main_img/shackle.png';
-import img_3 from '../assets/img/main_img/bracelet.jpg';
-import img_4 from '../assets/img/main_img/stud.jpg';
-import img_5 from '../assets/img/main_img/manjewerly.jpg';
-import img_6 from '../assets/img/main_img/womanjewerly.jpg';
-import img_7 from '../assets/img/main_img/newjewerly.jpg';
-import img_8 from '../assets/img/main_img/comand.jpg';
-import img_9 from '../assets/img/main_img/contacts.png';
+import img_1 from '../Assets/Img/Main_img/ring.jpg';
+import img_2 from '../Assets/Img/Main_img/shackle.png';
+import img_3 from '../Assets/Img/Main_img/bracelet.jpg';
+import img_4 from '../Assets/Img/Main_img/stud.jpg';
+import img_5 from '../Assets/Img/Main_img/manjewerly.jpg';
+import img_6 from '../Assets/Img/Main_img/womanjewerly.jpg';
+import img_7 from '../Assets/Img/Main_img/newjewerly.jpg';
+import img_8 from '../Assets/Img/Main_img/comand.jpg';
+import img_9 from '../Assets/Img/Main_img/contacts.png';
 
 const DESCR = `Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum tempore veritatis omnis distinctio dignissimos.
 Commodi officia natus id repellat quas,

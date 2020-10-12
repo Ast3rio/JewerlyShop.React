@@ -17,7 +17,7 @@ const cartReducer = (state = initialState, action) => {
         case DELETE_GOODS_FROM_CART:
             return {
                 ...state,
-                cart: state.cart.slice(0, action.removeGood).concat(state.cart.slice(action.removeGood + 1)),
+                cart: state.cart.slice(0, action.goodIndex).concat(state.cart.slice(action.goodIndex + 1)),
             }
         case REMOVE_ALL_GOODS:
             return {
@@ -31,7 +31,7 @@ const cartReducer = (state = initialState, action) => {
 
 
 export const addGoodsToCart = (addGood) => ({ type: 'ADD_GOODS_TO_CART', addGood });
-export const removeGoodsFromCart = (removeGood) => ({ type: 'DELETE_GOODS_FROM_CART', removeGood });
+export const removeGoodsFromCart = (goodIndex) => ({ type: 'DELETE_GOODS_FROM_CART', goodIndex });
 export const removeAllGoods = (cart) => ({ type: 'REMOVE_ALL_GOODS', cart });
 
 

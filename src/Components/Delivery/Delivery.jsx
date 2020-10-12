@@ -1,9 +1,9 @@
 import React from 'react';
-import s from './Delivery.module.scss';
+import style from './Delivery.module.scss';
 
 const Delivery = ()=>{
     return(
-        <section className={s.delivery}>
+        <section className={style.delivery}>
             Delivery
         </section>
     )

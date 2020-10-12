@@ -1,10 +1,10 @@
 import React from 'react';
-import s from './FooterMenu.module.scss';
+import style from './FooterMenu.module.scss';
 import { NavLink } from 'react-router-dom';
 
 const FooterMenu = () =>{
     return(
-        <nav className={s.menu}>
+        <nav className={style.menu}>
             <li><NavLink to="/store">Магазин</NavLink></li>
             <li><NavLink to="/brand">О бренде</NavLink></li>
             <li><NavLink to="/delivery">Доставка</NavLink></li>

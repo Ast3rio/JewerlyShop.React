@@ -1,5 +1,5 @@
 import React from 'react';
-import s from './Paginator.module.scss';
+import style from './Paginator.module.scss';
 
 const Paginator = ({ totalItemsCount, pageSize, currentPage, onPageChanged }) => {
     let pagesCount = Math.ceil(totalItemsCount / pageSize);
@@ -10,9 +10,9 @@ const Paginator = ({ totalItemsCount, pageSize, currentPage, onPageChanged }) =>
     };
 
     return (
-        <div className={s.paginator}>
+        <div className={style.paginator}>
             {pages.map( p => {
-                return <span key={p} className={s.page_number + ' ' + (currentPage === p && s.selected_page) }
+                return <span key={p} className={style.page_number + ' ' + (currentPage === p && style.selected_page) }
                  onClick={() => {onPageChanged(p)}} >{p}</span>
             })}
         </div>

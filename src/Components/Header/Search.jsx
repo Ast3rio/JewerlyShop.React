@@ -1,13 +1,13 @@
 import React from 'react';
-import s from './Search.module.scss';
+import style from './Search.module.scss';
 
 
 const Search = ({ closeSearch }) => {
     return (
-        <div className={s.wrapper}>
-            <div className={s.top}>
+        <div className={style.wrapper}>
+            <div className={style.top}>
                 <div>ПОИСК</div>
-                <div className={s.close} onClick={closeSearch}>&times;</div>
+                <div className={style.close} onClick={closeSearch}>&times;</div>
             </div>
         </div>
     )

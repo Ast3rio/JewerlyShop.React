@@ -14,6 +14,9 @@
     display: block;
     font-size: 2rem;
     font-family: $cursiveFont;
+    border-bottom: 1px solid $mainColor;
+    width: 50%;
+    padding: 2% 0 0;
 }
 
 .block{

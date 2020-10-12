@@ -1,0 +1,18 @@
+@mixin mathSign($top, $left, $width, $height, $translate) {
+    content: "";
+    background-color: $mainColor;
+    width: $width;
+    height: $height;
+    position: absolute;
+    top: $top;
+    left: $left;
+    transform: $translate;
+}
+
+@mixin socials($icon) {
+    content: $icon;
+    position: absolute;
+    top: 5px;
+    left: 0;
+    transform: translate(-50%);
+}
