@@ -1,19 +1,24 @@
 import React, { useState } from 'react';
 import style from './Header.module.scss';
-import logo from './../../Assets/Img/logo.png';
+//Import Components 
 import Menu from './Menu/Menu';
 import Cart from './Cart';
-import Search from './Search';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faShoppingCart, faSearch } from '@fortawesome/free-solid-svg-icons';
 import MobileMenu from './MobileMenu/MobileMenu';
+import Logo from './HeaderComponents/Logo';
+import Search from './HeaderComponents/Search';
+import Bucket from './HeaderComponents/Bucket';
+import LogIn from './HeaderComponents/LogIn';
+import Hamburger from './HeaderComponents/Hamburger';
+//Imports Modules
 import { useSelector } from 'react-redux';
 
 
-const Header = () => {
 
+const Header = () => {
+    //State
     const cart = useSelector(state => state.cart.cart);
 
+    //Open & close for backet
     const [cartWindow, setCartWindow] = useState(false);
     let openCartWindow = () => {
         setCartWindow(true);
@@ -21,20 +26,11 @@ const Header = () => {
     let closeCartWindow = () => {
         setCartWindow(false);
     };
-    const [searchWindow, setSearchWindow] = useState(false);
-    let openSearchWindow = () => {
-        setSearchWindow(true);
-    };
-    let closeSearchWindow = () => {
-        setSearchWindow(false);
-    };
-
+    //Open & close mobile window
     const [mobileMenu, setMobileMenu] = useState(false);
-
     let openMobileMenu = () => {
         setMobileMenu(true);
     };
-
     let closeMobileMenu = () => {
         setMobileMenu(false);
     };
@@ -42,20 +38,14 @@ const Header = () => {
     return (
         <header className={style.header + ' ' + 'container'}>
             <div className={style.top}>
-                <FontAwesomeIcon className={style.search + ' ' + style.icon_style} onClick={openSearchWindow} icon={faSearch} />
-                <div className={style.cart__wrapper}>
-                    <div className={style.cart__number}>{cart.length}</div>
-                    <FontAwesomeIcon className={style.cart + ' ' + style.icon_style} onClick={openCartWindow} icon={faShoppingCart} />
-                </div>
-                <div className={style.mobile_menu} onClick={mobileMenu ? closeMobileMenu : openMobileMenu}>
-                    <div className={style.hamburger + ' ' + (mobileMenu ? style.active_menu : null)} ></div>
-                    <div className={style.close_hamburger + ' ' + (mobileMenu ? style.deactive_menu : null)} ></div>
-                </div>
+                <Logo />
+                <Search />
+                <Bucket openCart={openCartWindow} cart={cart} />
+                <LogIn />
+                <Hamburger mobileMenu={mobileMenu} openMobileMenu={openMobileMenu} closeMobileMenu={closeMobileMenu} />
                 {mobileMenu && <MobileMenu closeMobileMenu={closeMobileMenu} />}
-                {cartWindow && <Cart cart={cart} closeCart={closeCartWindow} />}
-                {searchWindow && <Search closeSearch={closeSearchWindow} />}
             </div>
-            <img src={logo} alt='logo' />
+            {cartWindow && <Cart cart={cart} closeCart={closeCartWindow} />}
             <Menu />
         </header>
     )

@@ -3,6 +3,7 @@ import { updateObjectInArray} from "../Utils/object-helpers";
 const SET_CURRENT_PAGE = 'SET_CURRENT_PAGE';
 const UP_SUMPRICE = 'UP_SUMPRICE';
 const DOWN_SUMPRICE = 'DOWN_SUMPRICE';
+const SET_GOODS_TYPE = 'SET_GOODS_TYPE';
 
 export const GOODS_STATUSES = {
     IN_STOCK: 'есть в наличии',
@@ -14,8 +15,8 @@ export const GOODS_TYPES = {
     RING: 'ring',
     SHACKLE: 'shakle',
     BRACELET: 'bracelet',
-    MAN_JEWELRY: 'man jewelry',
-    WOMAN_JEWELRY: 'woman jewelry',
+    MAN_JEWELRY: 'man_jewelry',
+    WOMAN_JEWELRY: 'woman_jewelry',
     NEW: 'new',
 }
 
@@ -40,9 +41,12 @@ let initialState = {
         { id: 17, title: 'Деревянный браслет', type: GOODS_TYPES.BRACELET, price: 500, status: GOODS_STATUSES.NOT_IN_STOCK, sumprice: 1, width: '8', material: 'wood'  },
         { id: 18, title: 'Браслет с золотым орнаментом', type: GOODS_TYPES.BRACELET, price: 2100, status: GOODS_STATUSES.ORDER, sumprice: 1, width: '12', material: 'metal' },
     ],
+    goodsType: null,
     totalItemsCount: 20,
     pageSize: 9,
     currentPage: 1,
+    minPrice: 0,
+    maxPrice: 10000,
 }
 
 const storePageReducer = (state = initialState, action) => {
@@ -62,6 +66,11 @@ const storePageReducer = (state = initialState, action) => {
                 ...state,
                 currentPage: action.currentPage,
             }
+        case SET_GOODS_TYPE: 
+            return {
+                ...state,
+                goodsType: action.goodsType,
+            }
         default:
             return state;
     }
@@ -70,5 +79,6 @@ const storePageReducer = (state = initialState, action) => {
 export const upSumprice = (id, sumprice) => ({ type: 'UP_SUMPRICE', id, sumprice});
 export const downSumprice= (id, sumprice) => ({ type: 'DOWN_SUMPRICE', id, sumprice});
 export const setCurrentPage = (currentPage) => ({ type: 'SET_CURRENT_PAGE', currentPage });
+export const setGoodsType = (goodsType) => ({type: 'SET_GOODS_TYPE', goodsType});
 
 export default storePageReducer;

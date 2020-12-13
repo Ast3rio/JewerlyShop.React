@@ -8,19 +8,16 @@
     padding-top: 28px;
 }
 
-
-
 .card {
     position: relative;
     width: 250px;
     height: 400px;
     transition: all 0.5s;
+    border-radius: 0 0 0 30px;
     &:hover {
         box-shadow: 0px 0px 24px -4px rgba(0, 0, 0, 0.72);
     }
 }
-
-
 
 .img {
     width: 100%;
@@ -61,7 +58,6 @@
     padding-left: 2%;
 }
 
-
 .card_title {
     text-align: center;
     font-weight: 700;
@@ -71,10 +67,12 @@
     font-weight: 400;
     margin-top: 2%;
 }
+
 .price {
     font-size: 24px;
     font-weight: 700;
 }
+
 .status {
     display: flex;
     align-items: center;
@@ -82,14 +80,13 @@
     font-size: 1.8rem;
 }
 
-
 .control {
     display: flex;
     justify-content: space-between;
     width: 80%;
     position: absolute;
     bottom: 2%;
-    left: 10%;
+    left: 12%;
     align-items: center;
 }
 

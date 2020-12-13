@@ -1,3 +1,4 @@
+//Style for plus and minus
 @mixin mathSign($top, $left, $width, $height, $translate) {
     content: "";
     background-color: $mainColor;
@@ -8,11 +9,20 @@
     left: $left;
     transform: $translate;
 }
-
+//Style for socials icons
 @mixin socials($icon) {
     content: $icon;
     position: absolute;
     top: 5px;
     left: 0;
     transform: translate(-50%);
+}
+//Style lines for title in brand page
+@mixin brandTitle() {
+    content: "";
+    width: 400px;
+    height: 2px;
+    position: absolute;
+    top: 50%;
+    background-color: $mainColor;
 }

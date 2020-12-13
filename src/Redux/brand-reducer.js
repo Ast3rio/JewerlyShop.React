@@ -32,4 +32,6 @@ const brandPageReducer = (state = initialState, action) =>{
     }
 } 
 
+
+
 export default brandPageReducer;

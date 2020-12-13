@@ -2,8 +2,9 @@
 
 .contacts{
     grid-area: content;
-    min-height: 700px;
+    min-height: 620px;
     font-size: 1.6rem;
+    padding-top: 20px;
     &__wrapper{
         display: flex;
         justify-content: space-between;

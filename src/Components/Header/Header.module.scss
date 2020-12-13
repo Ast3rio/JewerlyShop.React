@@ -1,30 +1,96 @@
 @import "../../vars";
 
-.header{
+.header {
     grid-area: header;
     padding: 30px 0 10px 0;
-    img{
-        width: 180px;
-        position: relative;
-        left: 50%;
-        transform: translateX(-50%);
+    font-size: 1.4rem;
+}
+
+.top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    margin: 0 20px;
+}
+
+.logo {
+    width: 100px;
+}
+
+.icon_style {
+    position: relative;
+    font-size: 2.2rem;
+    cursor: pointer;
+    &:hover {
+        color: $mainColor;
     }
 }
 
-.mobile_menu{
+.cart__wrapper {
+    position: relative;
+    margin-right: 20px;
+}
+
+.cart__number {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: -12px;
+    right: -15px;
+    font-size: 1rem;
+    background-color: #ccc;
+    z-index: 3;
+    width: 25px;
+    height: 25px;
+    border-radius: 30px;
+    color: $mainColor;
+    font-weight: 700;
+}
+
+.search__wrapper {
+    width: 600px;
+    margin: 0 50px;
+}
+
+.search {
+    &_input {
+        margin-right: 20px;
+        width: 500px;
+        padding: 5px 20px;
+        border-radius: 30px;
+        outline: none;
+        transition: all 0.3s ease-in-out;
+        border: 1px solid #000;
+        font-size: 1.6rem;
+        background-color: #dbdbdb;
+        &:focus {
+            border: 1px solid $mainColor;
+        }
+    }
+}
+
+.ava{
+    width: 50px;
+    margin-left: 10px;
+}
+
+//Styles for mobile menu
+.mobile_menu {
     width: 25px;
     height: 18px;
     position: relative;
     cursor: pointer;
     display: none;
 }
-.hamburger{
+.hamburger {
     width: 25px;
     height: 2px;
     background-color: #000;
     margin-top: 8px;
-    &:after{
-        content: '';
+    &:after {
+        content: "";
         width: 25px;
         height: 2px;
         background-color: #000;
@@ -32,8 +98,8 @@
         top: 0;
         left: 0;
     }
-    &:before{
-        content: '';
+    &:before {
+        content: "";
         width: 25px;
         height: 2px;
         background-color: #000;
@@ -43,10 +109,10 @@
     }
 }
 
-.close_hamburger{
+.close_hamburger {
     display: none;
-    &:after{
-        content: '';
+    &:after {
+        content: "";
         width: 25px;
         height: 2px;
         background-color: #000;
@@ -55,8 +121,8 @@
         left: 0;
         transform: rotate(45deg);
     }
-    &:before{
-        content: '';
+    &:before {
+        content: "";
         width: 25px;
         height: 2px;
         background-color: #000;
@@ -67,74 +133,32 @@
     }
 }
 
-.top{
-    display: flex;
-    justify-content: space-between;
-    height: 40px;
-}
-
-.icon_style{
-    position: relative;
-    font-size: 2.2rem;
-    cursor: pointer;
-    &:hover{
-        color: $mainColor;
-    }
-}
-
-
-.cart__wrapper{
-    position: relative;
-    margin-right: 20px;
-}
-
-.cart__number{
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    top: -12px;
-    right: -15px;
-    background-color: #ccc;
-    z-index: 3;
-    width: 25px;
-    height: 25px;
-    border-radius: 30px;
-    color: $mainColor;
-    font-weight: 700;
-}
-
-.search{
-    margin-left: 20px;
-}
-
-.active_menu{
+.active_menu {
     display: none;
 }
 
-.deactive_menu{
+.deactive_menu {
     display: block;
 }
 
-
 @media (max-width: 1430px) {
-    .search{
+    .search {
         margin-left: 40px;
     }
-    .cart__wrapper{
+    .cart__wrapper {
         margin-right: 40px;
     }
 }
 
 @media (max-width: 860px) {
-    .mobile_menu{
+    .mobile_menu {
         display: block;
     }
-    .top{
+    .top {
         justify-content: start;
     }
-    .header{
-        img{
+    .header {
+        img {
             margin-top: 75px;
         }
     }

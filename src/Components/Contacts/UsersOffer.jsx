@@ -1,10 +1,12 @@
 import React from 'react';
 import style from './Contacts.module.scss';
+//Import modules
 import { reduxForm, Field } from 'redux-form';
 import { maxLengthCreator, minLengthCreator, required } from '../../Utils/Validator/validator';
+//Import components
 import { Textarea, Input, Button } from '../Common/FormsControls';
 
-
+//Variables for limit string length for inputs
 let maxLength100 = maxLengthCreator(100);
 let minLength5 = minLengthCreator(5);
 let maxLength2000 = maxLengthCreator(2000);

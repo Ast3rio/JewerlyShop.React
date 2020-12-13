@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.scss';
-import { Route, Switch, Redirect, HashRouter } from 'react-router-dom';
+import { Route, Switch, Redirect, BrowserRouter } from 'react-router-dom';
 import Footer from './Components/Footer/Footer';
 import Brand from './Components/Brand/Brand';
 import Delivery from './Components/Delivery/Delivery';
@@ -11,11 +11,13 @@ import Header from './Components/Header/Header';
 import Store from './Components/Store/Store';
 import { Provider } from 'react-redux';
 import store from './Redux/store';
+import AdminPage from './Components/AdminPage/AdminPage';
+import Order from './Components/Order/Order';
 
 
 function App() {
   return (
-    <HashRouter >
+    <BrowserRouter >
       <Provider store={store}>
     <div>
       <Header />
@@ -28,6 +30,8 @@ function App() {
           <Route path='/delivery' component={Delivery} />
           <Route path='/refund' component={Refund} />
           <Route path='/contacts' component={Contacts} />
+          <Route path='/admin' component={AdminPage} />
+          <Route path='/order' component={Order} />
           <Redirect from="/*" to="/main" />
         </Switch>
       </div>
@@ -35,7 +39,7 @@ function App() {
       <Footer />
     </div>
     </Provider>
-    </HashRouter>
+    </BrowserRouter>
   );
 }
 

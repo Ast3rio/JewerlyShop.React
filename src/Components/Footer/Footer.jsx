@@ -1,10 +1,10 @@
 import React from 'react';
 import style from './Footer.module.scss';
+//Import components
 import FooterContacts from './FooterContacts/FooterContacts';
 import FooterMenu from './FooterMenu/FooterMenu';
 import FooterSocial from './FooterSocial/FooterSocial';
 import Subscribe from './Subscribe/Subscribe';
-
 
 const Footer = () => {
     return (
@@ -20,6 +20,5 @@ const Footer = () => {
         </footer>
     )
 }
-
 
 export default Footer;

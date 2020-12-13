@@ -1,4 +1,5 @@
 @import '../../vars';
+@import '../../mixins';
 
 .brand{
     grid-area: content;
@@ -14,22 +15,12 @@
     font-weight: 700;
     text-align: center;
     &::before{
-        content: '';
-        width: 400px;
-        height: 2px;
-        position: absolute;
-        top: 50%;
+        @include brandTitle;
         left: 170px;
-        background-color: $mainColor;
     }
     &::after{
-        content: '';
-        width: 400px;
-        height: 2px;
-        position: absolute;
-        top: 50%;
+        @include brandTitle;
         right: 170px;
-        background-color: $mainColor;
     }
 }
 

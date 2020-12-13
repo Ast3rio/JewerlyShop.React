@@ -1,55 +1,45 @@
 import React from 'react';
 import style from './Cart.module.scss';
-import { Button } from '../Common/FormsControls';
+//Import modules
 import { useDispatch } from 'react-redux';
-
-
+import { NavLink } from 'react-router-dom';
+//Import components
+import GoodInCart from './GoodInCart';
+import { Button } from '../Common/FormsControls';
 
 const Cart = ({ closeCart, cart }) => {
-
+    //Dispatches
     const removeAllGoods = useDispatch();
-    const removeGoodsFromCart = useDispatch();
-
-    const removeGood = (goodId) => {
-        let goodIndex = cart.findIndex(({ id }) => id == goodId);
-        removeGoodsFromCart({ type: 'DELETE_GOODS_FROM_CART', goodIndex })
-
-    }
+    //Clear backet set empty arr
     const clearCart = () => {
         let cart = [];
         removeAllGoods({ type: 'REMOVE_ALL_GOODS', cart });
     }
 
+    const targetCloseCart = (e) => {
+        if (e.target === e.currentTarget) {
+            closeCart();
+        }
+    }
+
     return (
-        <div className={style.wrapper} >
-            <div className={style.top}>
-                <div>КОРЗИНА</div>
-                <div className={style.close} onClick={closeCart}>&times;</div>
+        <section className={style.cart_wrapper} onClick={targetCloseCart}>
+            <div className={style.wrapper} >
+                <div className={style.top}>
+                    <div>КОРЗИНА</div>
+                    <div className={style.close} onClick={closeCart}>&times;</div>
+                </div>
+                <ul className={style.goods_wrapper}>
+                    <GoodInCart />
+                    {cart.length === 0 ? <div>Корзина пуста</div> : <div>
+                        <NavLink to="/order" className={style.btn_offer} onClick={closeCart}>Оформить заказ</NavLink>
+                        <Button label='Очистить корзину' onClick={clearCart} className={style.btn_remove} />
+                    </div>}
+                </ul>
+                <div className={style.bottom}></div>
             </div>
-            <ul className={style.goods_wrapper}>
-                {cart.map(good =>
-                    <li key={good.id} className={style.card_list}>
-                        <div className={style.cart_img}></div>
-                        <div className={style.card_info}>
-                            <h3 className={style.cart_title}>{good.title}</h3>
-                            <ul className={style.cart_list}>
-                                <li>Цена товара: {good.price + ' $'} </li>
-                                <li>Количество: {good.sumprice}</li>
-                                <li>Сума к оплате: {good.price * good.sumprice + ' $'}</li>
-                            </ul>
-                            <Button label={'Удалить'} onClick={() => removeGood(good.id)} className={style.cart_btn} />
-                        </div>
-                    </li>
-                )}
-                {cart.length === 0 ? <div>Корзина пуста</div> : <div>
-                    <Button label='Оформить заказ' className={style.btn_offer} />
-                    <Button label='Очистить корзину' onClick={() => clearCart()} className={style.btn_remove} />
-                </div>}
-            </ul>
-            <div className={style.bottom}></div>
-        </div>
+        </section>
     )
 }
-
 
 export default Cart;
