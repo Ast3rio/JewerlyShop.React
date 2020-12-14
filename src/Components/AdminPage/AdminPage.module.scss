@@ -1,10 +1,33 @@
-.wrapper{
+@import '../../vars';
+
+.wrapper {
     min-height: 600px;
     padding: 20px 0;
+    font-size: 1.6rem;
+    table{
+        width: 100%;
+    }
+    tr,th{
+        border: 1px solid #000;
+    }
 }
 
-.subscribers{
-    li{
-        display: block;
+.menu {
+    padding: 0 0 10px 0;
+    text-align: center;
+    .link{
+        padding: 5px 20px;
+        margin-right: 10px;
+        background-color: $mainColor;
+        color: #fff;
+        border-radius: 0 0 10px 10px;
+        font-weight: 600;
+        transition: all ease-in 0.3s;
+        &:hover{
+            background-color: $darkMainColor;
+        }
+    }
+    .active{
+        background-color: $darkMainColor;
     }
 }

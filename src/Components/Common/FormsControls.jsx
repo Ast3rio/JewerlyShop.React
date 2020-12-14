@@ -8,7 +8,7 @@ export const Textarea = ({ input, className, label, type, meta }) => {
     return (
         <div className={style.wrapper}>
             <textarea {...input} className={className + ' ' + style.textarea} placeholder={label} type={type} />
-            {hasError && <span className={hasError ? style.error : ''}>{meta.error}</span>}
+            {hasError && <span className={hasError ? 'error' : ''}>{meta.error}</span>}
         </div>
     )
 }

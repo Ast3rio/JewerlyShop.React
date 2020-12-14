@@ -39,8 +39,10 @@ const Header = () => {
         <header className={style.header + ' ' + 'container'}>
             <div className={style.top}>
                 <Logo />
-                <Search />
-                <Bucket openCart={openCartWindow} cart={cart} />
+                <div className={style.top_center}>
+                    <Search />
+                    <Bucket openCart={openCartWindow} cart={cart} />
+                </div>
                 <LogIn />
                 <Hamburger mobileMenu={mobileMenu} openMobileMenu={openMobileMenu} closeMobileMenu={closeMobileMenu} />
                 {mobileMenu && <MobileMenu closeMobileMenu={closeMobileMenu} />}

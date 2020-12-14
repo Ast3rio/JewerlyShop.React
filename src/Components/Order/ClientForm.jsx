@@ -9,17 +9,17 @@ let maxLength100 = maxLengthCreator(100);
 let minLength5 = minLengthCreator(5);
 
 
-const ClientForm = () => {
+const ClientForm = (props) => {
     return (
-        <form>
-            <Field className={style.form_styles} label={"Имя"} validate={[required, maxLength100, minLength5]} name={"name"} type={"text"} component={Input}/>
-            <Field className={style.form_styles} label={"Телефон"} validate={[required, maxLength100, minLength5]} name={"phone"} type={"text"} component={Input}/>
-            <Field className={style.form_styles} label={"Email"} validate={[required, maxLength100, minLength5]} name={"mail"} type={"text"} component={Input}/>
-            <Button />
+        <form onSubmit={props.handleSubmit}>
+            <Field className={style.form} label={"Имя"} validate={[required, maxLength100, minLength5]} name={"name"} type={"text"} component={Input}/>
+            <Field className={style.form} label={"Телефон"} validate={[required, maxLength100, minLength5]} name={"phone"} type={"text"} component={Input}/>
+            <Field className={style.form} label={"Email"} validate={[required, maxLength100, minLength5]} name={"mail"} type={"text"} component={Input}/>
+            <Button label={'Сделать заказ'} className={style.form}/>
         </form>
     )
 }
 
 export const ClientOffer = reduxForm({
-    form: 'contacts'
+    form: 'order'
 })(ClientForm)

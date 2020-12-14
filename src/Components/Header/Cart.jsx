@@ -10,12 +10,12 @@ import { Button } from '../Common/FormsControls';
 const Cart = ({ closeCart, cart }) => {
     //Dispatches
     const removeAllGoods = useDispatch();
-    //Clear backet set empty arr
+    //Clear bucket set empty arr
     const clearCart = () => {
         let cart = [];
         removeAllGoods({ type: 'REMOVE_ALL_GOODS', cart });
     }
-
+    //Close bucket with target
     const targetCloseCart = (e) => {
         if (e.target === e.currentTarget) {
             closeCart();

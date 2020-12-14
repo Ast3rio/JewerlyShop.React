@@ -8,6 +8,12 @@ import GoodsAmount from '../../Common/GoodsAmount/GoodsAmount';
 
 const CardFunctional = ({ addGoodsToCart, good, cart, ...props }) => {
 
+    const addGood = (e) => {
+        e.preventDefault();
+        addGoodsToCart(cart.concat({ id: good.id, title: good.title, price: good.price, sumprice: good.sumprice }));
+        good.sumprice = 1;
+    }
+
     return (
         <div>
             <h6 className={style.card_title}>{good.title}</h6>
@@ -23,7 +29,7 @@ const CardFunctional = ({ addGoodsToCart, good, cart, ...props }) => {
             <div className={style.control}>
                 <GoodsAmount id={good.id} sumprice={good.sumprice} />
                 <Button label={'В корзину'}
-                    onClick={(e) => { e.preventDefault(); addGoodsToCart(cart.concat({ id: good.id, title: good.title, price: good.price, sumprice: good.sumprice })) }}
+                    onClick={addGood}
                     className={style.card_btn} />
             </div>
         </div>

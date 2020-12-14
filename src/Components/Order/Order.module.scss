@@ -1,31 +1,41 @@
-.wrapper{
+.wrapper {
     padding: 20px 0;
     min-height: 700px;
     display: grid;
     grid-template-columns: 50% auto;
     gap: 20px;
     font-size: 1.6rem;
-    li{
+    li {
         display: block;
     }
-    h3{
+    h3 {
         text-align: center;
     }
 }
 
-
-.goods_wrapper{
-    overflow: auto;
-    height: 500px;
-    padding: 5%;
-}
-
-.block_left{
+.block_left {
     padding: 10px;
     height: 600px;
     overflow: auto;
 }
 
-.block_right{
+.list {
+    width: 100%;
+    td,
+    th {
+        border: 1px solid #000;
+    }
+    text-align: center;
+}
+
+.block_right {
     padding: 10px;
+}
+
+.form{
+    display: block;
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 20px;
+    transition: all 0.3s ease-in-out;
 }

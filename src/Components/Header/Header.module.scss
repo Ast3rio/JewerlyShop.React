@@ -12,6 +12,11 @@
     align-items: center;
     height: 60px;
     margin: 0 20px;
+    &_center{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 }
 
 .logo {
@@ -50,8 +55,8 @@
 }
 
 .search__wrapper {
-    width: 600px;
-    margin: 0 50px;
+    width: 550px;
+    margin: 0 20px;
 }
 
 .search {
