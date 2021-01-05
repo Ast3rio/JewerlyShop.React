@@ -28,11 +28,13 @@
     cursor: pointer;
     transition: all 0.5s;
     font-size: 1.6rem;
+    outline: none;
     &:hover{
         box-shadow: 0px 0px 14px -4px rgba(0,0,0,0.72);
     }        
     &:active{
         transform: translate(2px, 2px);
+        outline: none;
     }
     
 }

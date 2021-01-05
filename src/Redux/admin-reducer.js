@@ -7,20 +7,19 @@ let initialState = {
     subscribers: [],
     messages: [],
     orders: [],
-    admin: true,
 }
 
 const adminReducer = (state = initialState, action) => {
     switch (action) {
-        case ADD_NEW_SUBSCRIBER:
-            return {
-                ...state,
-                subscribers: action.subscriber,
-            };
         case ADD_NEW_MESSAGE:
             return {
                 ...state,
                 messages: action.message,
+            };
+        case ADD_NEW_SUBSCRIBER:
+            return {
+                ...state,
+                subscribers: action.subscriber,
             };
         case ADD_NEW_ORDER:
             return {

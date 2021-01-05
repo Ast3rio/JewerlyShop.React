@@ -12,9 +12,8 @@ const Order = () => {
     const addNewOrder = useDispatch();
 
     const onSubmit = () => {
-        let newOrder = orders.concat({ id: goods.id, title: goods.title, sumprice: goods.sumprice, price: goods.price });
-        addNewOrder({ type: 'ADD_NEW_ORDER', newOrder });
-        console.log(orders)
+        let order = orders.concat(goods);
+        addNewOrder({ type: 'ADD_NEW_ORDER', order });
     }
 
     return (

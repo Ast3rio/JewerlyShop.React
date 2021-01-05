@@ -1,14 +1,12 @@
 import React from 'react';
 import style from './Cart.module.scss';
-//Import modules
 import { useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
-//Import components
 import GoodInCart from './GoodInCart';
 import { Button } from '../Common/FormsControls';
 
 const Cart = ({ closeCart, cart }) => {
-    //Dispatches
+
     const removeAllGoods = useDispatch();
     //Clear bucket set empty arr
     const clearCart = () => {

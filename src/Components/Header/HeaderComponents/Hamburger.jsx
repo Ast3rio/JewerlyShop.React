@@ -1,7 +1,6 @@
 import React from 'react';
 import style from './../Header.module.scss';
 
-
 const Hamburger = ({ mobileMenu, closeMobileMenu, openMobileMenu }) => {
     return (
         <div className={style.mobile_menu} onClick={mobileMenu ? closeMobileMenu : openMobileMenu}>
@@ -10,6 +9,5 @@ const Hamburger = ({ mobileMenu, closeMobileMenu, openMobileMenu }) => {
         </div>
     )
 }
-
 
 export default Hamburger;

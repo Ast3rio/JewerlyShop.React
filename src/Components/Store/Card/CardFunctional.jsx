@@ -3,15 +3,12 @@ import style from './Card.module.scss';
 import { Button } from '../../Common/FormsControls';
 import GoodsAmount from '../../Common/GoodsAmount/GoodsAmount';
 
-
-
-
-const CardFunctional = ({ addGoodsToCart, good, cart, ...props }) => {
+const CardFunctional = ({ addGoodsToCart, good, cart }) => {
 
     const addGood = (e) => {
         e.preventDefault();
-        addGoodsToCart(cart.concat({ id: good.id, title: good.title, price: good.price, sumprice: good.sumprice }));
-        good.sumprice = 1;
+        addGoodsToCart(cart.concat({ id: good.id, title: good.title, price: good.price, count: good.count }));
+        good.count = 1;
     }
 
     return (
@@ -27,7 +24,7 @@ const CardFunctional = ({ addGoodsToCart, good, cart, ...props }) => {
                 <li>Материал: {good.material}</li>
             </ul>
             <div className={style.control}>
-                <GoodsAmount id={good.id} sumprice={good.sumprice} />
+                <GoodsAmount id={good.id} count={good.count} />
                 <Button label={'В корзину'}
                     onClick={addGood}
                     className={style.card_btn} />

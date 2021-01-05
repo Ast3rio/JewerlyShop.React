@@ -8,7 +8,7 @@ let InitialState = {
 
 
 const headerReducer = (state = InitialState, action) => {
-    switch (action) {
+    switch (action.type) {
         case SET_SEARCH_VALUE:
             return { ...state, searchValue: action.setValue }
         default:

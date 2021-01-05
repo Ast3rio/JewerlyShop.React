@@ -1,11 +1,11 @@
 import React from 'react';
 import style from './AdminPage.module.scss';
 import { useSelector } from 'react-redux';
+import { getIndex } from '../../Utils/getIndex';
 
 const AdminMessages = () => {
 
     const messages = useSelector(state => state.admin.messages);
-    const getIndex = (getId) => { return messages.findIndex(({ id }) => id == getId) + 1; } ;
 
     return (
         <table className={style.messages}>
@@ -20,7 +20,7 @@ const AdminMessages = () => {
             </thead>
             <tbody>
                 {messages.map(mes => <tr key={mes.id}>
-                    <th>{getIndex(mes.id)}</th>
+                    <th>{getIndex(messages, mes.id)}</th>
                     <th>{mes.name}</th>
                     <th>{mes.mail}</th>
                     <th>{mes.phone}</th>

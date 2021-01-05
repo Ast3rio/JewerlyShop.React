@@ -4,10 +4,7 @@ import style from './Subscribe.module.scss';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
-import { reduxForm, Field } from 'redux-form';
-//Import components
-import { Input } from '../../Common/FormsControls';
-import ModalWindow from '../../Common/ModalWindow';
+import { SubscribeFormContainer } from './SubscribeFormContainer';
 
 const Subscribe = () => {
     //State
@@ -42,16 +39,6 @@ const Subscribe = () => {
     )
 }
 
-const SubscribeForm = ({ handleSubmit, subscribe, modalWindow }) => {
-    return (<form onSubmit={handleSubmit}>
-        <Field component={Input} name='email' type='text' label='введите имейл' />
-        {subscribe ? <button disabled>Вы подписаны</button> : <button>Подписаться</button>}
-        {modalWindow ? <ModalWindow label={'Вы подписались'} /> : ''}
-    </form>)
-}
 
-const SubscribeFormContainer = reduxForm({
-    form: 'subscribe',
-})(SubscribeForm)
 
 export default Subscribe;

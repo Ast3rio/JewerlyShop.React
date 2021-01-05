@@ -26,3 +26,24 @@
     top: 50%;
     background-color: $mainColor;
 }
+//Styles for hamburger
+//Open menu
+@mixin ham_open {
+    content: "";
+    width: 25px;
+    height: 2px;
+    background-color: #000;
+    position: absolute;
+    left: 0;
+}
+//Close menu
+@mixin ham_close($deg) {
+    content: "";
+    width: 25px;
+    height: 2px;
+    background-color: #000;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: rotate($deg);
+}

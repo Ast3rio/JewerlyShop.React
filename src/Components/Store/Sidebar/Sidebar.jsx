@@ -1,14 +1,11 @@
 import React from 'react';
 import style from './Sidebar.module.scss';
-import { Button } from '../../Common/FormsControls';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { GOODS_TYPES } from '../../../Redux/store-reducer';
+import StoreFilter from './StoreFilter';
 
 const Sidebar = () => {
-
-    const minPrice = useSelector(state => state.storePage.minPrice);
-    const maxPrice = useSelector(state => state.storePage.maxPrice);
 
     const setGoodsType = useDispatch();
 
@@ -39,34 +36,7 @@ const Sidebar = () => {
                     <NavLink activeClassName={style.active} to={`/store/${GOODS_TYPES.NEW}`} onClick={() => setType(GOODS_TYPES.NEW)}>Новое</NavLink>
                 </li>
             </ul>
-            <div className={style.products__filter}>
-                <h4>Фильтр товара</h4>
-                <p>Цена:</p>
-                <div className={style.products__filter__price}>
-                    <input type="text" value={minPrice} />
-                    <input type="text" value={maxPrice} />
-                </div>
-                <p>Ширина основы:</p>
-                <div className={style.products__filter__width}>
-                    <select name='baseline'>
-                        <option value="-----">------</option>
-                        <option value="6мм">6мм</option>
-                        <option value="8мм">8мм</option>
-                        <option value="10мм">10мм</option>
-                        <option value="12мм">12мм</option>
-                    </select>
-                </div>
-                <p>Материал:</p>
-                <div className={style.products__filter__material}>
-                    <select name='material'>
-                        <option value="------">------</option>
-                        <option value="Дерево">Дерево</option>
-                        <option value="Металл">Металл</option>
-                        <option value="Красное дерево">Красное дерево</option>
-                    </select>
-                </div>
-                <Button className={style.filter_btn} label='Применить' />
-            </div>
+            <StoreFilter />
         </div>
     )
 }

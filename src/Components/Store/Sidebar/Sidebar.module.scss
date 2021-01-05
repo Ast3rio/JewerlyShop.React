@@ -38,7 +38,7 @@
     }
 }
 
-.products__filter {
+.filter {
     margin-top: 40px;
     width: 100%;
     min-height: 500px;
@@ -80,10 +80,6 @@
         justify-content: center;
         margin-bottom: 10px;
     }
-}
-
-.filter_btn{
-    margin-top: 20px;
 }
 
 @media (max-width: 940px) {

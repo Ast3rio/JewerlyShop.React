@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from "react-redux";
 import Card from  "./Card";
-import { setCurrentPage, upSumprice, downSumprice } from "../../../Redux/store-reducer";
+import { setCurrentPage, upGoodsCount, downGoodsCount } from "../../../Redux/store-reducer";
 import { addGoodsToCart } from '../../../Redux/cart-reducer';
 
 class CardContainer extends React.Component{
@@ -12,7 +12,7 @@ class CardContainer extends React.Component{
 
     render(){
         return(
-            <Card {...this.props} addGoodsToCart={this.props.addGoodsToCart} upSumprice={this.props.upSumprice} downSumprice={this.props.downSumprice} onPageChanged={this.onPageChanged} />
+            <Card {...this.props} addGoodsToCart={this.props.addGoodsToCart} upGoodsCount={this.props.upGoodsCount} downGoodsCount={this.props.downGoodsCount} onPageChanged={this.onPageChanged} />
         )
     }
 }
@@ -28,5 +28,5 @@ let mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps, {addGoodsToCart, setCurrentPage, upSumprice, downSumprice})(CardContainer);
+export default connect(mapStateToProps, {addGoodsToCart, setCurrentPage, upGoodsCount, downGoodsCount})(CardContainer);
 

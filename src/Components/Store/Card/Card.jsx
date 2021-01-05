@@ -1,17 +1,15 @@
 import React from 'react';
 import style from './Card.module.scss';
-//Import modules
 import { Route, NavLink, Redirect } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-//Import components
 import Paginator from '../../Common/Paginator/Paginator';
 import CardFunctional from './CardFunctional';
 import Switch from 'react-bootstrap/esm/Switch';
 import Good from '../Good/Good';
 
 const Card = (props) => {
-    //State
-    const goodsType = useSelector(state=> state.storePage.goodsType);
+
+    const goodsType = useSelector(state => state.storePage.goodsType);
 
     return (
         <div className={style.articles}>
@@ -25,7 +23,7 @@ const Card = (props) => {
     )
 }
 
-const CardAll = ({ card, cart, upSumprice, downSumprice, addGoodsToCart, totalItemsCount, pageSize, currentPage, onPageChanged, ...props }) => {
+const CardAll = ({ card, cart, upGoodsCount, downGoodsCount, addGoodsToCart, totalItemsCount, pageSize, currentPage, onPageChanged, ...props }) => {
 
     return (
         <div>
@@ -36,8 +34,8 @@ const CardAll = ({ card, cart, upSumprice, downSumprice, addGoodsToCart, totalIt
                     card.map(good =>
                         <li className={style.card} key={good.id}>
                             <NavLink to={`/store/good/${good.id}`}><div className={style.img}></div></NavLink>
-                            <CardFunctional addGoodsToCart={addGoodsToCart} upSumprice={upSumprice}
-                                downSumprice={downSumprice} cart={cart} card={card} good={good} props={props} />
+                            <CardFunctional addGoodsToCart={addGoodsToCart} upGoodsCount={upGoodsCount}
+                                downGoodsCount={downGoodsCount} cart={cart} card={card} good={good} props={props} />
                         </li>)
                 }
             </ul>
@@ -45,9 +43,13 @@ const CardAll = ({ card, cart, upSumprice, downSumprice, addGoodsToCart, totalIt
     )
 }
 
-const CardFilter = ({ card, cart, upSumprice, downSumprice, addGoodsToCart, totalItemsCount, pageSize, currentPage, onPageChanged, ...props }) => {
-    //State
-    const goodsType = useSelector(state=> state.storePage.goodsType);
+const CardFilter = ({ card, cart, upGoodsCount, downGoodsCount, addGoodsToCart, totalItemsCount, pageSize, currentPage, onPageChanged, ...props }) => {
+
+    const goodsType = useSelector(state => state.storePage.goodsType);
+    const minPrice = useSelector(state => state.filter.minPrice);
+    const maxPrice = useSelector(state => state.filter.maxPrice);
+    const widthBasis = useSelector(state => state.filter.widthBasis);
+    const material = useSelector(state => state.filter.material);
 
     return (
         <div>
@@ -55,11 +57,14 @@ const CardFilter = ({ card, cart, upSumprice, downSumprice, addGoodsToCart, tota
                 currentPage={currentPage} onPageChanged={onPageChanged} />
             <ul className={style.wrapper}>
                 {
-                    card.filter(cardFilter => cardFilter.type === goodsType ).map(good =>
+                    card.filter(cardFilter => cardFilter.type === goodsType &&
+                        cardFilter.price >= minPrice && cardFilter.price <= maxPrice &&
+                        cardFilter.width === widthBasis && cardFilter.material === material 
+                    ).map(good =>
                         <li className={style.card} key={good.id}>
                             <NavLink to={`/store/good/${good.id}`}><div className={style.img}></div></NavLink>
-                            <CardFunctional addGoodsToCart={addGoodsToCart} upSumprice={upSumprice}
-                                downSumprice={downSumprice} cart={cart} card={card} good={good} props={props} />
+                            <CardFunctional addGoodsToCart={addGoodsToCart} upGoodsCount={upGoodsCount}
+                                downGoodsCount={downGoodsCount} cart={cart} card={card} good={good} props={props} />
                         </li>)
                 }
             </ul >
