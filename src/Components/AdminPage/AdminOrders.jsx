@@ -9,7 +9,8 @@ const AdminOrders = () => {
 
     return (
         <ul className={style.order}>
-            {orders.map(or => <li key={or.id}>{getIndex(orders, or.id)} Title: {or.title}, Sumprice: {or.sumprice}, Price: {or.price}</li>)}
+            {orders.map(or => <li key={or.id}>{getIndex(orders, or.id)} Title: {or.title}, Sumprice: {or.count}, Price: {or.price}</li>)}
+            {console.log(orders)}
         </ul>
     )
 }

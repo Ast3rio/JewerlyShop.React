@@ -1,7 +1,7 @@
 import React from 'react';
 import style from './Card.module.scss';
 import { Route, NavLink, Redirect } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import Paginator from '../../Common/Paginator/Paginator';
 import CardFunctional from './CardFunctional';
 import Switch from 'react-bootstrap/esm/Switch';
@@ -10,12 +10,13 @@ import Good from '../Good/Good';
 const Card = (props) => {
 
     const goodsType = useSelector(state => state.storePage.goodsType);
+    const card = useSelector(state => state.storePage.card);
 
     return (
         <div className={style.articles}>
             <Switch>
-                <Route exact path='/store/all' render={() => <CardAll card={props.card} {...props} />} />
-                <Route path={`/store/${goodsType}`} render={() => <CardFilter card={props.card} {...props} />} />
+                <Route exact path='/store/all' render={() => <CardAll card={card} {...props} />} />
+                <Route path={`/store/${goodsType}`} render={() => <CardFilter card={card} {...props} />} />
                 <Route path={`/store/good/:id`} component={Good} />
                 <Redirect from='/store' to='/store/all' />
             </Switch>
@@ -23,12 +24,20 @@ const Card = (props) => {
     )
 }
 
-const CardAll = ({ card, cart, upGoodsCount, downGoodsCount, addGoodsToCart, totalItemsCount, pageSize, currentPage, onPageChanged, ...props }) => {
+const CardAll = ({ upGoodsCount, downGoodsCount, ...props }) => {
+
+    const card = useSelector(state => state.storePage.card);
+    const cart = useSelector(state => state.cart.cart);
+    const totalItemsCount = useSelector(state => state.storePage.totalItemsCount);
+    const pageSize = useSelector(state => state.storePage.pageSize);
+    const currentPage = useSelector(state => state.storePage.currentPage);
+
+    const addGoodsToCart = useDispatch();
 
     return (
         <div>
             <Paginator className={style.paginator} totalItemsCount={totalItemsCount} pageSize={pageSize}
-                currentPage={currentPage} onPageChanged={onPageChanged} />
+                currentPage={currentPage} />
             <ul className={style.wrapper}>
                 {
                     card.map(good =>
@@ -43,13 +52,20 @@ const CardAll = ({ card, cart, upGoodsCount, downGoodsCount, addGoodsToCart, tot
     )
 }
 
-const CardFilter = ({ card, cart, upGoodsCount, downGoodsCount, addGoodsToCart, totalItemsCount, pageSize, currentPage, onPageChanged, ...props }) => {
+const CardFilter = ({ upGoodsCount, downGoodsCount, ...props }) => {
 
     const goodsType = useSelector(state => state.storePage.goodsType);
     const minPrice = useSelector(state => state.filter.minPrice);
     const maxPrice = useSelector(state => state.filter.maxPrice);
     const widthBasis = useSelector(state => state.filter.widthBasis);
     const material = useSelector(state => state.filter.material);
+    const cart = useSelector(state => state.cart.cart);
+    const card = useSelector(state => state.storePage.card);
+    const totalItemsCount = useSelector(state => state.storePage.totalItemsCount);
+    const pageSize = useSelector(state => state.storePage.pageSize);
+    const currentPage = useSelector(state => state.storePage.currentPage);
+
+    const addGoodsToCart = useDispatch();
 
     return (
         <div>

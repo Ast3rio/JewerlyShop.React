@@ -3,7 +3,7 @@ const SET_PASSWORD = 'SET_PASSWORD';
 const SET_ADMIN_STATUS = 'SET_ADMIN_STATUS';
 
 let initialState = {
-    admin: false,
+    admin: true,
     login: '',
     password: '',
 }

@@ -7,7 +7,8 @@ const CardFunctional = ({ addGoodsToCart, good, cart }) => {
 
     const addGood = (e) => {
         e.preventDefault();
-        addGoodsToCart(cart.concat({ id: good.id, title: good.title, price: good.price, count: good.count }));
+        const addGood = cart.concat({ id: good.id, title: good.title, price: good.price, count: good.count });
+        addGoodsToCart({ type: 'ADD_GOODS_TO_CART' , addGood});
         good.count = 1;
     }
 

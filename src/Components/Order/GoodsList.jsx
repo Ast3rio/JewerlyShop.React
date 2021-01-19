@@ -14,8 +14,8 @@ const GoodsList = ({ goods }) => {
             <tbody>
                 {goods.map(good => <tr key={good.id}>
                     <td>{good.title}</td>
-                    <td>{good.sumprice}</td>
-                    <td>{good.price * good.sumprice}</td></tr>)}
+                    <td>{good.count}</td>
+                    <td>{good.price * good.count}</td></tr>)}
             </tbody>
         </table>
     )

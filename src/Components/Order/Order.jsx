@@ -5,14 +5,14 @@ import GoodsList from './GoodsList';
 import style from './Order.module.scss';
 
 const Order = () => {
-    //State
+
     const goods = useSelector(state => state.cart.cart);
     const orders = useSelector(state => state.admin.orders);
-    //Dispatches
+
     const addNewOrder = useDispatch();
 
     const onSubmit = () => {
-        let order = orders.concat(goods);
+        let order;
         addNewOrder({ type: 'ADD_NEW_ORDER', order });
     }
 

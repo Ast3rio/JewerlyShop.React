@@ -11,9 +11,6 @@ import Hamburger from './HeaderComponents/Hamburger';
 import Auth from './Auth';
 import { useSelector } from 'react-redux';
 
-
-
-
 const Header = () => {
 
     const cart = useSelector(state => state.cart.cart);
@@ -60,6 +57,5 @@ const Header = () => {
         </header>
     )
 }
-
 
 export default Header;
