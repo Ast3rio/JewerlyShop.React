@@ -1,6 +1,5 @@
 import React from 'react';
 import { reduxForm, Field } from 'redux-form';
-//Import components
 import { Input } from '../../Common/FormsControls';
 import ModalWindow from '../../Common/ModalWindow';
 

@@ -2,7 +2,7 @@ const SET_SUBSCRIBE = 'SET_SUBSCRIBE';
 
 let InitialState = {
     subscribe: false,
-}
+};
 
 const footerReducer = (state = InitialState, action) => {
     switch (action.type) {
@@ -13,8 +13,8 @@ const footerReducer = (state = InitialState, action) => {
             }
         default:
             return state;
-    };
-}
+    }
+};
 
 export const setSubscribe = (subscribe) => ({type: 'SET_SUBSCRIBE', subscribe});
 

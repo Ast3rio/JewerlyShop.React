@@ -17,10 +17,10 @@ const LogIn = ({ openAuth }) => {
         if (login !== '') {
             setUserMenu(true);
         }
-    }
+    };
     const onMouseLeave = () => {
         setUserMenu(false);
-    }
+    };
 
     const outFromAccount = () => {
         let login = '';
@@ -30,7 +30,7 @@ const LogIn = ({ openAuth }) => {
         setPassword({type: 'SET_PASSWORD', password});
         setAdminStatus({type: 'SET_ADMIN_STATUS', status});
         console.log(login);
-    }
+    };
 
     return (
         <div className={style.login} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>

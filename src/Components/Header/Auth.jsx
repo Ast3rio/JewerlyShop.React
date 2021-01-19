@@ -16,17 +16,17 @@ const Auth = ({ closeAuth }) => {
         if (e.target === e.currentTarget) {
             closeAuth();
         }
-    }
+    };
 
     const handleSetLogin = (e) => {
         let login = e.target.value;
         setLogin({ type: 'SET_LOGIN', login});
-    }
+    };
 
     const handleSetPassword = (e) => {
         let password = e.target.value;
         setPassword({ type: 'SET_PASSWORD', password });
-    }
+    };
 
     const setUserData = (e) => {
         e.preventDefault();
@@ -35,7 +35,7 @@ const Auth = ({ closeAuth }) => {
             setStatusAdmin({ type: 'SET_ADMIN_STATUS', status });
         }
         closeAuth();
-    }
+    };
 
     return (
         <section className={style.auth} onClick={targetCloseAuth}>

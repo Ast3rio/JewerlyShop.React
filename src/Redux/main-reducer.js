@@ -22,8 +22,8 @@ export const MAIN_PAGE_IMAGES = {
     IMG_6: img_6,
     IMG_7: img_7,
     IMG_8: img_8,
-    IMG_9: img_9,
-}
+    IMG_9: img_9
+};
 
 export const MAIN_PAGE_TITLES = {
     TITLE_1: 'Кольца',
@@ -35,7 +35,7 @@ export const MAIN_PAGE_TITLES = {
     TITLE_7: 'Новое',
     TITLE_8: 'О нас',
     TITLE_9: 'Контакты',
-}
+};
 
 let initialState = {
     blocks: [
@@ -50,11 +50,11 @@ let initialState = {
         { id: 9, image: MAIN_PAGE_IMAGES.IMG_9, title: MAIN_PAGE_TITLES.TITLE_9, descr: DESCR },
     ],
 
-}
+};
 
 const mainPageReducer = (state = initialState, action) => {
     return state;
-}
+};
 
 
 export default mainPageReducer;

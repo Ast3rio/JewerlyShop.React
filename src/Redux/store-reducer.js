@@ -9,7 +9,7 @@ export const GOODS_STATUSES = {
     IN_STOCK: 'есть в наличии',
     NOT_IN_STOCK:'нет на складе',
     ORDER: 'под заказ',
-}
+};
 
 export const GOODS_TYPES = {
     RING: 'ring',
@@ -18,7 +18,7 @@ export const GOODS_TYPES = {
     MAN_JEWELRY: 'man_jewelry',
     WOMAN_JEWELRY: 'woman_jewelry',
     NEW: 'new',
-}
+};
 
 let initialState = {
     card: [
@@ -45,7 +45,7 @@ let initialState = {
     totalItemsCount: 20,
     pageSize: 9,
     currentPage: 1,
-}
+};
 
 const storePageReducer = (state = initialState, action) => {
     switch (action.type) {
@@ -53,26 +53,26 @@ const storePageReducer = (state = initialState, action) => {
             return {
                 ...state,
                 card: updateObjectInArray(state.card, action.id, 'id', { count: action.count}),
-            }
+            };
         case DOWN_GOODS_COUNT:
             return {
                 ...state,
                 card: updateObjectInArray(state.card, action.id, 'id', { count: action.count }),
-            }
+            };
         case SET_CURRENT_PAGE:
             return {
                 ...state,
                 currentPage: action.currentPage,
-            }
+            };
         case SET_GOODS_TYPE: 
             return {
                 ...state,
                 goodsType: action.goodsType,
-            }
+            };
         default:
             return state;
     }
-}
+};
 
 export const upGoodsCount = (id, count) => ({ type: 'UP_GOODS_COUNT', id, count});
 export const downGoodsCount= (id, count) => ({ type: 'DOWN_GOODS_COUNT', id, count});

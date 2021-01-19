@@ -13,15 +13,15 @@ const authReducer = (state = initialState, action) => {
         case SET_LOGIN: 
             return {
                 ...state, login: action.login
-            }
+            };
         case SET_PASSWORD: 
             return {
                 ...state, password: action.password
-            }
+            };
         case SET_ADMIN_STATUS: 
             return {
                 ...state, admin: action.status
-            }
+            };
         default:
             return state;
     }

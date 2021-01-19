@@ -9,7 +9,7 @@ let initialState = {
     maxPrice: 10000,
     widthBasis: '-----',
     material: '-----',
-}
+};
 
 const filterReducer = (state = initialState, action) => {
     switch (action.type){
@@ -32,7 +32,7 @@ const filterReducer = (state = initialState, action) => {
         default:
             return state;
     }
-}
+};
 
 export const setMinPrice = (setValue) => ({type: 'SET_MIN_PRICE', setValue});
 export const setMaxPrice = (setValue) => ({type: 'SET_MAX_PRICE', setValue});

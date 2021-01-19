@@ -26,11 +26,11 @@ const Card = (props) => {
 
 const CardAll = ({ upGoodsCount, downGoodsCount, ...props }) => {
 
-    const card = useSelector(state => state.storePage.card);
-    const cart = useSelector(state => state.cart.cart);
-    const totalItemsCount = useSelector(state => state.storePage.totalItemsCount);
-    const pageSize = useSelector(state => state.storePage.pageSize);
-    const currentPage = useSelector(state => state.storePage.currentPage);
+    const card = useSelector(state => state.storePage.card),
+        cart = useSelector(state => state.cart.cart),
+        totalItemsCount = useSelector(state => state.storePage.totalItemsCount),
+        pageSize = useSelector(state => state.storePage.pageSize),
+        currentPage = useSelector(state => state.storePage.currentPage);
 
     const addGoodsToCart = useDispatch();
 
@@ -54,16 +54,16 @@ const CardAll = ({ upGoodsCount, downGoodsCount, ...props }) => {
 
 const CardFilter = ({ upGoodsCount, downGoodsCount, ...props }) => {
 
-    const goodsType = useSelector(state => state.storePage.goodsType);
-    const minPrice = useSelector(state => state.filter.minPrice);
-    const maxPrice = useSelector(state => state.filter.maxPrice);
-    const widthBasis = useSelector(state => state.filter.widthBasis);
-    const material = useSelector(state => state.filter.material);
-    const cart = useSelector(state => state.cart.cart);
-    const card = useSelector(state => state.storePage.card);
-    const totalItemsCount = useSelector(state => state.storePage.totalItemsCount);
-    const pageSize = useSelector(state => state.storePage.pageSize);
-    const currentPage = useSelector(state => state.storePage.currentPage);
+    const goodsType = useSelector(state => state.storePage.goodsType),
+            minPrice = useSelector(state => state.filter.minPrice),
+            maxPrice = useSelector(state => state.filter.maxPrice),
+            widthBasis = useSelector(state => state.filter.widthBasis),
+            material = useSelector(state => state.filter.material),
+            cart = useSelector(state => state.cart.cart),
+            card = useSelector(state => state.storePage.card),
+            totalItemsCount = useSelector(state => state.storePage.totalItemsCount),
+            pageSize = useSelector(state => state.storePage.pageSize),
+            currentPage = useSelector(state => state.storePage.currentPage);
 
     const addGoodsToCart = useDispatch();
 

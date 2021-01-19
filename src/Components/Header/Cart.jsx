@@ -12,13 +12,13 @@ const Cart = ({ closeCart, cart }) => {
     const clearCart = () => {
         let cart = [];
         removeAllGoods({ type: 'REMOVE_ALL_GOODS', cart });
-    }
+    };
     //Close bucket with target
     const targetCloseCart = (e) => {
         if (e.target === e.currentTarget) {
             closeCart();
         }
-    }
+    };
 
     return (
         <section className={style.cart_wrapper} onClick={targetCloseCart}>

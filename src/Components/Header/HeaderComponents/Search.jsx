@@ -11,7 +11,7 @@ const Search = () => {
     const handleSearchValue = (e) => {
         let setValue = e.target.value;
         setSearchValue({ type: 'SET_SEARCH_VALUE', setValue });
-    }
+    };
 
     return (
         <div className={style.search__wrapper} >

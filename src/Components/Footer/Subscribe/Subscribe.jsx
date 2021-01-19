@@ -18,7 +18,7 @@ const Subscribe = () => {
     let [modalWindow, setModalWindow] = useState(false);
     useEffect(() => {
         setTimeout(() => {
-            setModalWindow(false)
+            setModalWindow(false);
         }, 2000);
     }, [setTimeout(true)]);
 
@@ -29,7 +29,7 @@ const Subscribe = () => {
         setSubscribe({ type: 'SET_SUBSCRIBE', subscribe }); // set subscribe is true
         addNewSubscribe({ type: 'ADD_NEW_SUBSCRIBER', subscriber }); // add new subscribe to admin panel
         setModalWindow(true); //Open modal window
-    }
+    };
 
     return (
         <div className={style.subscribe}>

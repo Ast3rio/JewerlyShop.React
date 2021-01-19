@@ -34,10 +34,10 @@ const Header = () => {
     const [authWindow, setAuthWindow] = useState(false);
     const openAuthWindow = () => {
         setAuthWindow(true);
-    }
+    };
     const closeAuthWindow = () => {
         setAuthWindow(false);
-    }
+    };
     
     return (
         <header className={style.header + ' ' + 'container'}>

@@ -13,17 +13,17 @@ const cartReducer = (state = initialState, action) => {
             return {
                 ...state,
                 cart: action.addGood,
-            }
+            };
         case DELETE_GOODS_FROM_CART:
             return {
                 ...state,
                 cart: state.cart.slice(0, action.goodIndex).concat(state.cart.slice(action.goodIndex + 1)),
-            }
+            };
         case REMOVE_ALL_GOODS:
             return {
                 ...state,
                 cart: action.cart,
-            }
+            };
         default:
             return state;
     }

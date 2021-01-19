@@ -8,7 +8,7 @@ Quo, voluptatum excepturi suscipit vel eos omnis id?
 Deleniti, nesciunt dolore, iusto quo, molestiae unde possimus inventore placeat quae natus mollitia id voluptates nihil odio cumque! Necessitatibus illum
 dolorem reiciendis, deleniti incidunt sequi? Officia blanditiis sapiente veritatis saepe.
 Earum, nesciunt dolor? Doloremque adipisci accusantium ipsum numquam ratione voluptate labore officia ea dignissimos obcaecati, molestias nihil
-esse natus qui nulla quo itaque necessitatibus quos possimus! Porro quidem quam saepe!`
+esse natus qui nulla quo itaque necessitatibus quos possimus! Porro quidem quam saepe!`;
 
 
 let initialState = {
@@ -22,7 +22,7 @@ let initialState = {
         { id: 6, paragraph: TEXT }
     ],
     videoUrl: 'https://www.youtube.com/watch?v=IUN664s7N-c',
-}
+};
 
 
 const brandPageReducer = (state = initialState, action) =>{
@@ -30,7 +30,7 @@ const brandPageReducer = (state = initialState, action) =>{
         default:
             return state;
     }
-} 
+};
 
 
 
