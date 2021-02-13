@@ -70,7 +70,7 @@ const CardFilter = ({ upGoodsCount, downGoodsCount, ...props }) => {
     return (
         <div>
             <Paginator className={style.paginator} totalItemsCount={totalItemsCount} pageSize={pageSize}
-                currentPage={currentPage} onPageChanged={onPageChanged} />
+                currentPage={currentPage}/>
             <ul className={style.wrapper}>
                 {
                     card.filter(cardFilter => cardFilter.type === goodsType &&
