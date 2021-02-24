@@ -19,12 +19,12 @@ const AdminMessages = () => {
                 </tr>
             </thead>
             <tbody>
-                {messages.map(mes => <tr key={mes.id}>
-                    <th>{getIndex(messages, mes.id)}</th>
-                    <th>{mes.name}</th>
-                    <th>{mes.mail}</th>
-                    <th>{mes.phone}</th>
-                    <th>{mes.text}</th>
+                {messages.map(({id, name, mail, phone, text}) => <tr key={id}>
+                    <th>{getIndex(messages, id)}</th>
+                    <th>{name}</th>
+                    <th>{mail}</th>
+                    <th>{phone}</th>
+                    <th>{text}</th>
                 </tr>)}
             </tbody>
         </table>

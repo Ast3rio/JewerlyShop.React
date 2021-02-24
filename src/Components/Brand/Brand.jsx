@@ -14,7 +14,7 @@ const Brand = () => {
             <div className={style.title}>Про компанию</div>
             <div className={style.text}>
                 <img src={image} className={style.img} alt="Пара" />
-                {text.map(text => <p key={text.id}>{text.paragraph}</p>)}
+                {text.map(({id, paragraph}) => <p key={id}>{paragraph}</p>)}
             </div>
             <ReactPlayer className={style.video} controls={true} width='1200px' height='680px' url={videoUrl} />
         </section>

@@ -5,7 +5,7 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { useDispatch } from 'react-redux';
 
 const Search = () => {
-    //Dispatches
+    
     const setSearchValue = useDispatch();
 
     const handleSearchValue = (e) => {

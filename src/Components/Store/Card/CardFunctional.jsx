@@ -5,27 +5,29 @@ import GoodsAmount from '../../Common/GoodsAmount/GoodsAmount';
 
 const CardFunctional = ({ addGoodsToCart, good, cart }) => {
 
+    const {id, title, price, status, count, width, material} = good;
+
     const addGood = (e) => {
         e.preventDefault();
-        const addGood = cart.concat({ id: good.id, title: good.title, price: good.price, count: good.count });
+        const addGood = cart.concat({ id: id, title: title, price: price, count: count });
         addGoodsToCart({ type: 'ADD_GOODS_TO_CART' , addGood});
         good.count = 1;
     }
 
     return (
         <div>
-            <h6 className={style.card_title}>{good.title}</h6>
+            <h6 className={style.card_title}>{title}</h6>
             <div className={style.top}>
-                <div className={style.price}>{good.price + ' $'}</div>
-                {good.status === 'есть в наличии' ? <div className={style.status + ' ' + style.green}>{good.status}</div>
-                    : <div className={style.status}>{good.status}</div>}
+                <div className={style.price}>{price + ' $'}</div>
+                {status === 'есть в наличии' ? <div className={style.status + ' ' + style.green}>{status}</div>
+                    : <div className={style.status}>{status}</div>}
             </div>
             <ul className={style.bottom}>
-                <li>Ширина основы: {good.width}</li>
-                <li>Материал: {good.material}</li>
+                <li>Ширина основы: {width}</li>
+                <li>Материал: {material}</li>
             </ul>
             <div className={style.control}>
-                <GoodsAmount id={good.id} count={good.count} />
+                <GoodsAmount id={id} count={count} />
                 <Button label={'В корзину'}
                     onClick={addGood}
                     className={style.card_btn} />

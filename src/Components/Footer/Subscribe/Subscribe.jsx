@@ -1,16 +1,15 @@
 import React from 'react';
 import style from './Subscribe.module.scss';
-//Import modules
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
 import { SubscribeFormContainer } from './SubscribeFormContainer';
 
 const Subscribe = () => {
-    //State
+    
     const subscribers = useSelector(state => state.admin.subscribers);
     const subscribe = useSelector(state => state.footer.subscribe);
-    //Dispatches
+    
     const setSubscribe = useDispatch();
     const addNewSubscribe = useDispatch();
 

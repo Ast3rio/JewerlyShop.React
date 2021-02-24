@@ -20,10 +20,10 @@ const GoodsAmount = ({ id, count }) => {
     
     return (
         <div className={style.wrapper}>
-            <div className={style.btn + ' ' + style.minus}
+            <div className={style.btn__minus}
                 onClick={downGoodCount}></div>
             <div className={style.calc}>{count}</div>
-            <div className={style.btn + ' ' + style.plus}
+            <div className={style.btn__plus}
                 onClick={upGoodCount}></div>
         </div>
     )

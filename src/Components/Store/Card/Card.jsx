@@ -6,7 +6,7 @@ import Paginator from '../../Common/Paginator/Paginator';
 import CardFunctional from './CardFunctional';
 import Good from '../Good/Good';
 
-const Card = ({upGoodsCount, downGoodsCount, ...props}) => {
+const Card = ({ ...props }) => {
 
     const addGoodsToCart = useDispatch();
 
@@ -25,8 +25,7 @@ const Card = ({upGoodsCount, downGoodsCount, ...props}) => {
         return (
             <li className={style.card} key={good.id}>
                 <NavLink to={`/store/good/${good.id}`}><div className={style.img}></div></NavLink>
-                <CardFunctional addGoodsToCart={addGoodsToCart} upGoodsCount={upGoodsCount}
-                    downGoodsCount={downGoodsCount} cart={cart} card={card} good={good} props={props} />
+                <CardFunctional addGoodsToCart={addGoodsToCart} cart={cart} card={card} good={good} props={props} />
             </li>
         )
     }
@@ -46,7 +45,7 @@ const Card = ({upGoodsCount, downGoodsCount, ...props}) => {
     )
 }
 
-const CardAll = ({ card, minPrice, maxPrice, totalItemsCount, pageSize, currentPage, renderGoods}) => {
+const CardAll = ({ card, minPrice, maxPrice, totalItemsCount, pageSize, currentPage, renderGoods }) => {
 
     return (
         <div>
@@ -63,23 +62,39 @@ const CardAll = ({ card, minPrice, maxPrice, totalItemsCount, pageSize, currentP
     )
 }
 
-const CardFilter = ({ card, goodsType, minPrice, maxPrice, widthBasis, material, totalItemsCount, pageSize, currentPage, renderGoods}) => {
+const CardFilter = ({ card, goodsType, minPrice, maxPrice, widthBasis, material, totalItemsCount, pageSize, currentPage, renderGoods }) => {
+
+    const filterGoods = () => {
+        if (widthBasis === "-----") {
+            return card.filter(el => el.type === goodsType)
+                .filter(el => el.price >= minPrice)
+                .filter(el => el.price <= maxPrice)
+                .filter(el => el.material === material)
+                .map(good => renderGoods(good))
+        }
+        if (material === "-----") {
+            return card.filter(el => el.type === goodsType)
+                .filter(el => el.price >= minPrice)
+                .filter(el => el.price <= maxPrice)
+                .filter(el => el.width === widthBasis)
+                .map(good => renderGoods(good))
+        }
+        if (widthBasis !== "-----" && material !== "-----") {
+            return card.filter(el => el.type === goodsType)
+                .filter(el => el.price >= minPrice)
+                .filter(el => el.price <= maxPrice)
+                .filter(el => el.width === widthBasis)
+                .filter(el => el.material === material)
+                .map(good => renderGoods(good))
+        }
+    }
 
     return (
         <div>
             <Paginator className={style.paginator} totalItemsCount={totalItemsCount} pageSize={pageSize}
                 currentPage={currentPage} />
             <ul className={style.wrapper}>
-                {
-                    widthBasis !== "-----" || material !== "-----" ? card.filter(el => el.type === goodsType)
-                        .filter(el => el.price >= minPrice)
-                        .filter(el => el.price <= maxPrice)
-                        .filter(el => el.width === widthBasis)
-                        .filter(el => el.material === material).map(good => renderGoods(good))
-                        : card.filter(el => el.type === goodsType)
-                            .filter(el => el.price >= minPrice)
-                            .filter(el => el.price <= maxPrice).map(good => renderGoods(good))
-                }
+                {filterGoods()}
             </ul >
         </div>
     )

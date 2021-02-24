@@ -1,6 +1,5 @@
 import React from 'react';
 import style from './Menu.module.scss';
-//Import modules
 import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 

@@ -1,6 +1,5 @@
 import React from 'react';
 import style from './Footer.module.scss';
-//Import components
 import FooterContacts from './FooterContacts/FooterContacts';
 import FooterMenu from './FooterMenu/FooterMenu';
 import FooterSocial from './FooterSocial/FooterSocial';

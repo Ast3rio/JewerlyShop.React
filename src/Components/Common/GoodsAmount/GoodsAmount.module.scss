@@ -1,13 +1,7 @@
 @import "../../../vars";
 @import "../../../mixins";
 
-.wrapper {
-    display: flex;
-    justify-content: center;
-    width: 100px;
-}
-
-.btn {
+@mixin btnCalc {
     width: 15px;
     height: 15px;
     margin-top: 12px;
@@ -15,19 +9,30 @@
     cursor: pointer;
 }
 
-.minus::before {
-    @include mathSign(50%, 0, 15px, 2px, translateX(-50%));
-}
-.plus {
-    &::before {
-        @include mathSign(50%, 0, 15px, 2px, translateY(-50%));
-    }
-
-    &::after {
-        @include mathSign(0, 50%, 2px, 15px, translateX(-50%));
-    }
+.wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100px;
 }
 
+.btn {
+    &__minus {
+        @include btnCalc();
+        &::before {
+            @include mathSign(50%, 0, 15px, 2px, translateX(-50%));
+        }
+    }
+    &__plus {
+        @include btnCalc();
+        &::before {
+            @include mathSign(50%, 0, 15px, 2px, translateY(-50%));
+        }
+
+        &::after {
+            @include mathSign(0, 50%, 2px, 15px, translateX(-50%));
+        }
+    }
+}
 .calc {
     text-align: center;
     font-size: 2.4rem;

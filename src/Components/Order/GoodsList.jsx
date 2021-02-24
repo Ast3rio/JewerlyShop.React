@@ -12,10 +12,10 @@ const GoodsList = ({ goods }) => {
                 </tr>
             </thead>
             <tbody>
-                {goods.map(good => <tr key={good.id}>
-                    <td>{good.title}</td>
-                    <td>{good.count}</td>
-                    <td>{good.price * good.count}</td></tr>)}
+                {goods.map(({id, title, count, price}) => <tr key={id}>
+                    <td>{title}</td>
+                    <td>{count}</td>
+                    <td>{price * count}</td></tr>)}
             </tbody>
         </table>
     )

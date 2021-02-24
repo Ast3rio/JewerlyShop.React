@@ -4,10 +4,10 @@ import style from './Auth.module.scss';
 import { useDispatch, useSelector } from 'react-redux';
 
 const Auth = ({ closeAuth }) => {
-    //State
+    
     const login = useSelector(state => state.auth.login);
     const password = useSelector(state => state.auth.password);
-    //Dispatches
+    
     const setLogin = useDispatch();
     const setPassword = useDispatch();
     const setStatusAdmin = useDispatch();

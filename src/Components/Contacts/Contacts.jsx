@@ -8,6 +8,7 @@ import ContactsRightBlock from './ContactsRightBlock';
 const Contacts = () => {
 
     let [modalWindow, setModalWindow] = useState(false);
+    
     useEffect(() => {
         setTimeout(() => {
             setModalWindow(false);
