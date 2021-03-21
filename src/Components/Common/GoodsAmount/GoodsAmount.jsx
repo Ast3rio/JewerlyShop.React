@@ -1,9 +1,10 @@
 import React from 'react';
 import style from './GoodsAmount.module.scss';
 import { useDispatch } from 'react-redux';
+import { PropTypes } from 'prop-types';
 
 
-const GoodsAmount = ({ id, count }) => {
+const GoodsAmount = ({ id, count = 1 }) => {
 
     const upGoodsCount = useDispatch();
     const downGoodsCount = useDispatch();
@@ -27,6 +28,11 @@ const GoodsAmount = ({ id, count }) => {
                 onClick={upGoodCount}></div>
         </div>
     )
+}
+
+GoodsAmount.propTypes = {
+    id: PropTypes.number,
+    count: PropTypes.number
 }
 
 export default GoodsAmount;

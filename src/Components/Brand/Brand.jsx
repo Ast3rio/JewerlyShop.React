@@ -2,6 +2,8 @@ import React from 'react';
 import style from './Brand.module.scss';
 import { useSelector } from 'react-redux';
 import ReactPlayer from 'react-player';
+import couple from '../../Assets/Img/Brand_img/couple.png';
+import {PropTypes} from 'prop-types';
 
 const Brand = () => {
 
@@ -21,5 +23,15 @@ const Brand = () => {
     )
 }
 
+Brand.propTypes = {
+    videoUrl: PropTypes.string,
+    text: PropTypes.string
+}
+
+Brand.defaultProps = {
+    image: couple,
+    videoUrl: 'https://www.youtube.com/watch?v=IUN664s7N-c',
+    text: "Text about this brand"
+}
 
 export default Brand;

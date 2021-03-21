@@ -38,21 +38,23 @@ const Header = () => {
     const closeAuthWindow = () => {
         setAuthWindow(false);
     };
-    
+
     return (
         <header className={style.header + ' ' + 'container'}>
             <div className={style.top}>
-                <Logo />
-                <div className={style.top_center}>
+                <div className={style.top__left}>
+                    <Logo />
                     <Search />
-                    <Bucket openCart={openCartWindow} cart={cart} />
                 </div>
-                <LogIn openAuth={openAuthWindow} />
-                <Hamburger mobileMenu={mobileMenu} openMobileMenu={openMobileMenu} closeMobileMenu={closeMobileMenu} />
-                {mobileMenu && <MobileMenu closeMobileMenu={closeMobileMenu} />}
+                <div className={style.top__right}>
+                    <Bucket openCart={openCartWindow} cart={cart} />
+                    <LogIn openAuth={openAuthWindow} />
+                    <Hamburger mobileMenu={mobileMenu} openMobileMenu={openMobileMenu} closeMobileMenu={closeMobileMenu} />
+                    {mobileMenu && <MobileMenu closeMobileMenu={closeMobileMenu} />}
+                </div>
             </div>
             {cartWindow && <Cart cart={cart} closeCart={closeCartWindow} />}
-            {authWindow && <Auth closeAuth={closeAuthWindow}/>}
+            {authWindow && <Auth closeAuth={closeAuthWindow} />}
             <Menu />
         </header>
     )

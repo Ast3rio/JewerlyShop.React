@@ -2,6 +2,7 @@ import React from 'react';
 import style from './AdminPage.module.scss';
 import { useSelector } from 'react-redux';
 import { getIndex } from '../../Utils/getIndex';
+import {PropTypes} from 'prop-types';
 
 const AdminSubs = () => {
     
@@ -23,6 +24,14 @@ const AdminSubs = () => {
             </tbody>
         </table>
     )
+}
+
+AdminSubs.propTypes = {
+    subscribers: PropTypes.array
+}
+
+AdminSubs.defaultProps = {
+    subscribers: []
 }
 
 export default AdminSubs;

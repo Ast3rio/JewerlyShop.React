@@ -29,37 +29,39 @@ const Good = () => {
 
     return (
         <>
-            {card.filter(id => id.id == getId.id).map(el =>
-                <div key={el.id} className={style.wrapper}>
-                    <Slider className={style.slider} {...settings}>
-                        <div className={style.img}>1</div>
-                        <div className={style.img}>2</div>
-                        <div className={style.img}>3</div>
-                    </Slider>
-                    <div className={style.info}>
-                        <div className={style.title}>{el.title}</div>
-                        <hr />
-                        <div className={style.price}>$ {el.price}</div>
-                        {el.status === 'есть в наличии' ? <div className={style.status + ' ' + style.green}>{el.status}</div>
-                            : <div className={style.status}>{el.status}</div>}
-                        <Button label={'В корзину'}
-                            onClick={(e) => {
-                                e.preventDefault(); addGoodsToCart(cart.concat({
-                                    id: el.id, title: el.title,
-                                    price: el.price, count: el.count
-                                }))
-                            }}
-                            className={style.card_btn} />
-                        <GoodsAmount count={el.count} id={el.id} />
-                        <hr />
-                        <ul className={style.descr}>
-                            <span>Характеристики:</span>
-                            <li> Материал: {el.material}</li>
-                            <li> Размер: {el.width}</li>
-                        </ul>
+            {card.filter(id => id.id == getId.id)
+                .map(({ id, title, price, status, count, material, width }) =>
+                    <div key={id} className={style.wrapper}>
+                        <Slider className={style.slider} {...settings}>
+                            <div className={style.img}>1</div>
+                            <div className={style.img}>2</div>
+                            <div className={style.img}>3</div>
+                        </Slider>
+                        <div className={style.info}>
+                            <div className={style.title}>{title}</div>
+                            <hr />
+                            <div className={style.price}>$ {price}</div>
+                            {status === 'есть в наличии' ? <div className={style.status + ' ' + style.green}>{status}</div>
+                                : <div className={style.status}>{status}</div>}
+                            <Button label={'В корзину'}
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    addGoodsToCart(cart.concat({
+                                        id: id, title: title,
+                                        price: price, count: count
+                                    }))
+                                }}
+                                className={style.card_btn} />
+                            <GoodsAmount count={count} id={id} />
+                            <hr />
+                            <ul className={style.descr}>
+                                <span>Характеристики:</span>
+                                <li> Материал: {material}</li>
+                                <li> Размер: {width}</li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
-            )}
+                )}
         </>
     )
 }

@@ -53,8 +53,8 @@ const CardAll = ({ card, minPrice, maxPrice, totalItemsCount, pageSize, currentP
                 currentPage={currentPage} />
             <ul className={style.wrapper}>
                 {
-                    card.filter(el => el.price >= minPrice)
-                        .filter(el => el.price <= maxPrice).map(good =>
+                    card.filter(({price}) => price >= minPrice)
+                        .filter(({price}) => price <= maxPrice).map(good =>
                             renderGoods(good))
                 }
             </ul>
@@ -66,25 +66,25 @@ const CardFilter = ({ card, goodsType, minPrice, maxPrice, widthBasis, material,
 
     const filterGoods = () => {
         if (widthBasis === "-----") {
-            return card.filter(el => el.type === goodsType)
-                .filter(el => el.price >= minPrice)
-                .filter(el => el.price <= maxPrice)
-                .filter(el => el.material === material)
+            return card.filter(({type}) => type === goodsType)
+                .filter(({price}) => price >= minPrice)
+                .filter(({price}) => price <= maxPrice)
+                .filter(({material}) => material === material)
                 .map(good => renderGoods(good))
         }
         if (material === "-----") {
-            return card.filter(el => el.type === goodsType)
-                .filter(el => el.price >= minPrice)
-                .filter(el => el.price <= maxPrice)
-                .filter(el => el.width === widthBasis)
+            return card.filter(({type}) => type === goodsType)
+                .filter(({price}) => price >= minPrice)
+                .filter(({price}) => price <= maxPrice)
+                .filter(({width}) => width === widthBasis)
                 .map(good => renderGoods(good))
         }
         if (widthBasis !== "-----" && material !== "-----") {
-            return card.filter(el => el.type === goodsType)
-                .filter(el => el.price >= minPrice)
-                .filter(el => el.price <= maxPrice)
-                .filter(el => el.width === widthBasis)
-                .filter(el => el.material === material)
+            return card.filter(({type}) => type === goodsType)
+                .filter(({price}) => price >= minPrice)
+                .filter(({price}) => price <= maxPrice)
+                .filter(({width}) => width === widthBasis)
+                .filter(({material}) => material === material)
                 .map(good => renderGoods(good))
         }
     }

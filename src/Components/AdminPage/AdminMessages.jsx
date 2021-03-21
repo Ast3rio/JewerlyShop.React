@@ -2,6 +2,7 @@ import React from 'react';
 import style from './AdminPage.module.scss';
 import { useSelector } from 'react-redux';
 import { getIndex } from '../../Utils/getIndex';
+import { PropTypes } from 'prop-types';
 
 const AdminMessages = () => {
 
@@ -19,7 +20,7 @@ const AdminMessages = () => {
                 </tr>
             </thead>
             <tbody>
-                {messages.map(({id, name, mail, phone, text}) => <tr key={id}>
+                {messages.map(({id = 'no data', name = 'no data', mail = 'no data', phone='no data', text='no data'}) => <tr key={id}>
                     <th>{getIndex(messages, id)}</th>
                     <th>{name}</th>
                     <th>{mail}</th>
@@ -29,6 +30,15 @@ const AdminMessages = () => {
             </tbody>
         </table>
     )
+}
+
+
+AdminMessages.propTypes = {
+    messages: PropTypes.array.isRequired,
+}
+
+AdminMessages.defaultProps = {
+    messages: []
 }
 
 export default AdminMessages;

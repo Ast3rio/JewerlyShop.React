@@ -9,15 +9,16 @@ const Main = () => {
     const blocks = useSelector(state => state.mainPage.blocks);
     
     return (
-        <section className={style.wrapper}>
-            {blocks.map(block => <div key={block.id} className={style.effects + ' ' + style.item__wrapper}><img src={block.image} alt="image" className={style.img} />
+        <main className={style.wrapper}>
+            {blocks.map(({id, image, descr, title}) => <div key={id} className={style.effects + ' ' + style.item__wrapper}>
+                <img src={image} alt="image" className={style.img} />
                 <div className={style.info}>
-                    <div className={style.descr}>{block.descr}</div>
+                    <div className={style.descr}>{descr}</div>
                     <a href="#top" className={style.link}>Узнать больше</a>
                 </div>
-                <div className={style.title}><p>{block.title}</p></div>
+                <div className={style.title}><p>{title}</p></div>
             </div>)}
-        </section>
+        </main>
     )
 }
 

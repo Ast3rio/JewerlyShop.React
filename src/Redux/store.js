@@ -22,7 +22,7 @@ let reducers = combineReducers({
     form: formReducer,
     admin: adminReducer,
     filter: filterReducer,
-    auth: authReducer,
+    auth: authReducer
 });
 
 let store = createStore(reducers);
