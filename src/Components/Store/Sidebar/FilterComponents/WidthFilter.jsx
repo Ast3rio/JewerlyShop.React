@@ -9,8 +9,8 @@ const WidthFilter = () => {
     const setWidthBasis = useDispatch();
 
     const handleWidthBasis = (e) => {
-        let setValue = e.target.value;
-        setWidthBasis({ type: 'SET_WIDTH_BASIS', setValue });
+        let width = e.target.value;
+        setWidthBasis({ type: 'SET_WIDTH_BASIS', width });
     }
 
     return (

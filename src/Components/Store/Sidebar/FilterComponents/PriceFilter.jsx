@@ -11,13 +11,13 @@ const PriceFilter = () => {
     const setMaxPrice = useDispatch();
 
     const handleMinPrice = (e) => {
-        let setValue = e.target.value;
-        setMinPrice({ type: 'SET_MIN_PRICE', setValue });
+        let minPrice = e.target.value;
+        setMinPrice({ type: 'SET_MIN_PRICE', minPrice });
     }
 
     const handleMaxPrice = (e) => {
-        let setValue = e.target.value;
-        setMaxPrice({ type: 'SET_MAX_PRICE', setValue });
+        let maxPrice = e.target.value;
+        setMaxPrice({ type: 'SET_MAX_PRICE', maxPrice });
     }
 
     return (

@@ -4,18 +4,18 @@ import style from './../Sidebar.module.scss';
 
 const MaterialFilter = () => {
 
-    const material = useSelector(state => state.filter.material);
+    const goodMaterial = useSelector(state => state.filter.goodMaterial);
 
     const setMaterial = useDispatch();
     
     const handleMaterial = (e) => {
-        let setValue = e.target.value;
-        setMaterial({ type: 'SET_MATERIAL', setValue });
+        let material = e.target.value;
+        setMaterial({ type: 'SET_MATERIAL', material });
     }
 
     return (
         <div className={style.filter__material} onChange={handleMaterial}>
-            <select name='material' value={material}>
+            <select name='material' value={goodMaterial}>
                 <option value="-----">-----</option>
                 <option value="wood">Дерево</option>
                 <option value="metal">Металл</option>
