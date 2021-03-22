@@ -13,13 +13,14 @@
     align-items: center;
     height: 60px;
     margin: 0 20px;
-    &__right, &__left {
+    &__right,
+    &__left {
         width: 160px;
         display: flex;
         justify-content: space-between;
         align-items: center;
     }
-    &__left{
+    &__left {
         width: 440px;
     }
 }
@@ -63,18 +64,13 @@
 .search {
     position: relative;
     z-index: 5;
-    .icon_style{
-        color: #000;
-        &:hover{
-            color: $mainColor;
-        }
-    }
+
     &__input {
         height: 50px;
         padding: 0 25px;
         border-radius: 30px;
         outline: none;
-        transition: all 0.6s ease-in-out;
+        transition: all 0.4s ease-in-out;
         border: 1px solid #000;
         font-size: 1.6rem;
         background-color: #dbdbdb;
@@ -83,7 +79,7 @@
             border: 1px solid $mainColor;
         }
     }
-    &__icon{
+    &__icon {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -95,6 +91,18 @@
         height: 39px;
         border-radius: 50%;
         background-color: inherit;
+        cursor: pointer;
+        .icon_style {
+            color: #000;
+            &:hover {
+                color: $mainColor;
+            }
+        }
+        &:hover {
+            .icon_style {
+                color: $mainColor;
+            }
+        }
     }
     &__close {
         width: 40px;
@@ -111,10 +119,10 @@
         align-items: center;
         color: #000;
         cursor: pointer;
-        &:hover{
+        &:hover {
             color: #fff;
         }
-        span{
+        span {
             transform: translateY(-7%);
         }
     }
@@ -122,35 +130,44 @@
         width: 550px;
         margin: 0 20px;
     }
-    &__active{
+    &__active {
         width: 500px;
     }
-    &__deactive{
+    &__deactive {
         width: 40px;
     }
-    &__list{
+    &__list {
         position: absolute;
         top: 20px;
         left: 0;
         width: 100%;
-        min-height: 20px;
+        max-height: 410px;
+        overflow: auto;
         background-color: #fff;
         z-index: -1;
         margin-bottom: 0;
-        padding: 40px 20px 20px;
-        li{
+        padding: 0 20px 0;
+        border: 2px solid $mainColor;
+        border-top: none;
+        li {
             display: block;
             margin: 5px 0;
             border-bottom: 1px solid $mainColor;
             padding: 4px 20px;
-            a{
+            &:first-child{
+                margin-top: 40px;
+            }
+            &:last-child{
+                margin-bottom: 20px;
+            }
+            a {
                 display: block;
                 width: 100%;
                 font-size: 1.5rem;
             }
-            &:hover{
+            &:hover {
                 background-color: $mainColor;
-                a{
+                a {
                     color: #fff;
                 }
             }

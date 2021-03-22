@@ -8,7 +8,7 @@ let initialState = {
     minPrice: 0,
     maxPrice: 10000,
     widthBasis: '-----',
-    material: '-----',
+    goodMaterial: '-----',
 };
 
 const filterReducer = (state = initialState, action) => {
@@ -27,7 +27,7 @@ const filterReducer = (state = initialState, action) => {
             };
         case SET_MATERIAL:
             return {
-                ...state, material: action.setValue
+                ...state, goodMaterial: action.setValue
             };
         default:
             return state;

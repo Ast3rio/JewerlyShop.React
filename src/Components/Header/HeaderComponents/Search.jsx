@@ -20,19 +20,23 @@ const Search = () => {
 
     const toggleSearchStatus = () => {
         let status = !searchStatus;
-        setSearchBar({type: 'SET_SEARCH_BAR', status});
+        setSearchBar({ type: 'SET_SEARCH_BAR', status });
     }
 
     return (
         <div className={style.search} >
-            <input className={style.search__input + ' ' + (searchStatus ? style.search__active : style.search__deactive)} type="text" placeholder='Поиск' onChange={handleSearchValue} />
+            <input className={style.search__input + ' ' + (searchStatus ? style.search__active : style.search__deactive)}
+                type="text" placeholder='Поиск' onChange={handleSearchValue} />
             {searchStatus ?
                 <div onClick={toggleSearchStatus} className={style.search__close}><span>&times;</span></div> :
-                <div className={style.search__icon}>
-                    <FontAwesomeIcon onClick={toggleSearchStatus} className={style.icon_style} icon={faSearch} />
+                <div onClick={toggleSearchStatus} className={style.search__icon}>
+                    <FontAwesomeIcon className={style.icon_style} icon={faSearch} />
                 </div>}
-            {searchStatus && <ul className={style.search__list}>
-                {card.filter(el => el.title.toLowerCase().includes(searchValue.toLowerCase()) && searchValue !== '').map(el => <li key={el.id}><NavLink to={`/store/good/${el.id}`}>{el.title}</NavLink></li> )}
+            {searchStatus && searchValue !== '' && <ul className={style.search__list}>
+                {card.filter(({ title }) => title.toLowerCase().includes(searchValue.toLowerCase()) && searchValue !== '')
+                    .map(({ id, title }) => <li key={id}>
+                        <NavLink onClick={toggleSearchStatus} to={`/store/good/${id}`}>{title}</NavLink>
+                    </li>)}
             </ul>}
         </div>
     )

@@ -16,7 +16,7 @@ const MaterialFilter = () => {
     return (
         <div className={style.filter__material} onChange={handleMaterial}>
             <select name='material' value={material}>
-                <option value="------">------</option>
+                <option value="-----">-----</option>
                 <option value="wood">Дерево</option>
                 <option value="metal">Металл</option>
                 <option value="красное дерево">Красное дерево</option>
