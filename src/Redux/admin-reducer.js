@@ -10,7 +10,7 @@ let initialState = {
 }
 
 const adminReducer = (state = initialState, action) => {
-    switch (action) {
+    switch (action.type) {
         case ADD_NEW_MESSAGE:
             return {
                 ...state,

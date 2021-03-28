@@ -5,6 +5,7 @@ import Header from './Components/Header/Header';
 import Footer from './Components/Footer/Footer';
 import { Suspense } from 'react';
 import { useSelector } from 'react-redux';
+import Privacy from './Components/Privacy/Privacy';
 
 const Main = React.lazy(() => import('./Components/Main/Main'));
 const Store = React.lazy(() => import('./Components/Store/Store'));
@@ -32,6 +33,7 @@ function App() {
             <Route path='/delivery' component={Delivery} />
             <Route path='/refund' component={Refund} />
             <Route path='/contacts' component={Contacts} />
+            <Route path='/privacy' component={Privacy} />
             {admin ? <Route path='/admin' component={AdminPage} /> : <Redirect from='/admin' to='/main' />}
             <Route path='/order' component={Order} />
             <Redirect from="/*" to="/main" />

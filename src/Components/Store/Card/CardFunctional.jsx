@@ -2,9 +2,12 @@ import React from 'react';
 import style from './Card.module.scss';
 import { Button } from '../../Common/FormsControls';
 import GoodsAmount from '../../Common/GoodsAmount/GoodsAmount';
+import { useSelector } from 'react-redux';
 
-const CardFunctional = ({ addGoodsToCart, good, cart }) => {
+const CardFunctional = ({ addGoodsToCart, good}) => {
 
+    const cart = useSelector(state => state.cart.cart);
+    
     const {id, title, price, status, count, width, material} = good;
 
     const addGood = (e) => {

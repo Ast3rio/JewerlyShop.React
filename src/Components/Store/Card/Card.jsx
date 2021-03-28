@@ -15,17 +15,17 @@ const Card = ({ ...props }) => {
         maxPrice = useSelector(state => state.filter.maxPrice),
         widthBasis = useSelector(state => state.filter.widthBasis),
         goodMaterial = useSelector(state => state.filter.goodMaterial),
-        cart = useSelector(state => state.cart.cart),
         card = useSelector(state => state.storePage.card),
         totalItemsCount = useSelector(state => state.storePage.totalItemsCount),
         pageSize = useSelector(state => state.storePage.pageSize),
         currentPage = useSelector(state => state.storePage.currentPage);
 
     const renderGoods = (good) => {
+        const {id} = good;
         return (
-            <li className={style.card} key={good.id}>
-                <NavLink to={`/store/good/${good.id}`}><div className={style.img}></div></NavLink>
-                <CardFunctional addGoodsToCart={addGoodsToCart} cart={cart} card={card} good={good} props={props} />
+            <li className={style.card} key={id}>
+                <NavLink to={`/store/good/${id}`}><div className={style.img}></div></NavLink>
+                <CardFunctional addGoodsToCart={addGoodsToCart} card={card} good={good} props={props} />
             </li>
         )
     }
@@ -36,7 +36,7 @@ const Card = ({ ...props }) => {
                 <Route exact path='/store/all' render={() => <CardAll card={card} minPrice={minPrice} maxPrice={maxPrice} widthBasis={widthBasis} goodMaterial={goodMaterial}
                     totalItemsCount={totalItemsCount} pageSize={pageSize} currentPage={currentPage} renderGoods={renderGoods} {...props} />} />
                 <Route path={`/store/${goodsType}`} render={() => <CardFilter card={card} goodsType={goodsType}
-                    minPrice={minPrice} maxPrice={maxPrice} widthBasis={widthBasis} goodMaterial={goodMaterial} cart={cart} totalItemsCount={totalItemsCount}
+                    minPrice={minPrice} maxPrice={maxPrice} widthBasis={widthBasis} goodMaterial={goodMaterial} totalItemsCount={totalItemsCount}
                     pageSize={pageSize} currentPage={currentPage} renderGoods={renderGoods} {...props} />} />
                 <Route path={`/store/good/:id`} component={Good} />
                 <Redirect from='/store' to='/store/all' />

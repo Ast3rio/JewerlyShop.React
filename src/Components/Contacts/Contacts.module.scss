@@ -1,17 +1,18 @@
-@import '../../vars';
+@import "../../vars";
+@import "../../mixins";
 
-.contacts{
+.contacts {
     grid-area: content;
     min-height: 620px;
     font-size: 1.6rem;
     padding-top: 20px;
-    &__wrapper{
+    &__wrapper {
         display: flex;
         justify-content: space-between;
     }
 }
 
-.list{
+.list {
     display: block;
     font-size: 2rem;
     font-family: $cursiveFont;
@@ -20,25 +21,38 @@
     padding: 2% 0 0;
 }
 
-.block{
-    &__left{
+.block {
+    &__left {
         width: 40%;
     }
-    &__right{
+    &__right {
         width: 60%;
     }
 }
 
-.form_styles{
-    display: block;
+.form{
     width: 40%;
     margin: 0 auto;
-    margin-top: 20px;
-    transition: all 0.3s ease-in-out;
 }
 
-.modal{
+.input {
+    padding: 10px;
+    height: 40px;
+    @include form_contacts_sizes;
+}
+
+.textarea {
+    padding: 10px;
+    height: 200px;
+    border: 1px solid #000;
+    resize: none;
+    @include form_contacts_sizes;
+}
+
+.btn{
+    @include form_contacts_sizes;
+}
+
+.modal {
     z-index: 5;
 }
-
-

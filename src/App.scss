@@ -1,6 +1,7 @@
 
 @import "~slick-carousel/slick/slick.css"; 
 @import "~slick-carousel/slick/slick-theme.css";
+@import "./vars";
 
 .app-wrapper{
   display: grid;
@@ -27,6 +28,12 @@ a {
 
 .container{
   max-width: 1440px;
+}
+
+.checkbox {
+  width: 10px;
+  height: 10px;
+  background-color: $mainColor;
 }
 
 section{

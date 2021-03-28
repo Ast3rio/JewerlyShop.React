@@ -1,0 +1,22 @@
+.privacy{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+    div{
+        font-size: 1.2rem;
+    }
+    a{
+        font-size: 1.2rem;
+        color: blue;
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+}
+
+.checkbox{
+    width: 15px;
+    height: 15px;
+    margin-right: 10px;
+}

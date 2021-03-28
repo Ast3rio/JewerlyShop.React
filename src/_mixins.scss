@@ -47,3 +47,12 @@
     left: 0;
     transform: rotate($deg);
 }
+
+
+@mixin form_contacts_sizes{
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 20px;
+    transition: all 0.3s ease-in-out;
+}

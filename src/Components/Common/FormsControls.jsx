@@ -7,8 +7,8 @@ export const Textarea = ({ input, className, label, type, meta }) => {
 
     return (
         <div className={style.wrapper}>
-            <textarea {...input} className={className + ' ' + style.textarea} placeholder={label} type={type} />
-            {hasError && <span className={hasError ? 'error' : ''}>{meta.error}</span>}
+            <textarea {...input} className={className} placeholder={label} type={type} />
+            {hasError && <span className={hasError ? style.error : ''}>{meta.error}</span>}
         </div>
     )
 }
@@ -19,7 +19,7 @@ export const Input = ({ input, className, label, type, meta, valuespace, disable
 
     return (
         <div className={style.wrapper}>
-            <input {...input} className={className + ' ' + style.input} disabled={disabled} value={valuespace} placeholder={label} type={type} />
+            <input {...input} className={className} disabled={disabled} value={valuespace} placeholder={label} type={type} />
             {hasError && <span className={hasError ? style.error : ''}>{meta.error}</span>}
         </div>
     )
@@ -31,3 +31,4 @@ export const Button = ({ className, label, onClick }) => {
         <button onClick={onClick} className={style.btn + ' ' + className }>{label}</button>
     )
 }
+
