@@ -22,12 +22,12 @@ const Subscribe = () => {
     }, [setTimeout(true)]);
 
     //Submit info about new subscriber for admin
-    let onSubmit = (dataForm) => {
-        let subscribe = true;
-        let subscriber = subscribers.push({ id: 2, email: dataForm.email });
-        setSubscribe({ type: 'SET_SUBSCRIBE', subscribe }); // set subscribe is true
-        addNewSubscribe({ type: 'ADD_NEW_SUBSCRIBER', subscriber }); // add new subscribe to admin panel
+    let onSubmit = (formData) => {
         setModalWindow(true); //Open modal window
+        let sub = true;
+        let subscriber = subscribers.push({ id: 2, email: formData.email });
+        setSubscribe({ type: 'SET_SUBSCRIBE', sub }); // set subscribe is true
+        addNewSubscribe({ type: 'ADD_NEW_SUBSCRIBER', subscriber }); // add new subscribe to admin panel
     };
 
     return (

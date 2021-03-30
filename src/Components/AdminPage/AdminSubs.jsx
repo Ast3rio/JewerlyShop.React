@@ -17,7 +17,7 @@ const AdminSubs = () => {
                 </tr>
             </thead>
             <tbody>
-                {subscribers.map((id, email) => <tr key={id}>
+                {subscribers.map(({id, email}) => <tr key={id}>
                     <th>{getIndex(subscribers, id)}</th>
                     <th> {email}</th>
                 </tr>)}

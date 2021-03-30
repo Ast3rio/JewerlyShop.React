@@ -5,10 +5,12 @@ import { useDispatch, useSelector } from 'react-redux';
 import Paginator from '../../Common/Paginator/Paginator';
 import CardFunctional from './CardFunctional';
 import Good from '../Good/Good';
+import { getGoods } from '../../../Api/api';
 
 const Card = ({ ...props }) => {
 
     const addGoodsToCart = useDispatch();
+    const setGoods = useDispatch();
 
     const goodsType = useSelector(state => state.storePage.goodsType),
         minPrice = useSelector(state => state.filter.minPrice),
@@ -20,8 +22,20 @@ const Card = ({ ...props }) => {
         pageSize = useSelector(state => state.storePage.pageSize),
         currentPage = useSelector(state => state.storePage.currentPage);
 
+    const setGoodsOnPage = () => {
+        getGoods().then(
+            res => {
+                setGoods({ type: 'SET_GOODS', goods : res.data });
+            }
+        );
+    }
+
+    if(card.length === 0) {
+        setGoodsOnPage();
+    }
+
     const renderGoods = (good) => {
-        const {id} = good;
+        const { id } = good;
         return (
             <li className={style.card} key={id}>
                 <NavLink to={`/store/good/${id}`}><div className={style.img}></div></NavLink>
@@ -78,9 +92,9 @@ const CardAll = ({ card, minPrice, maxPrice, totalItemsCount, widthBasis, goodMa
         <div>
             <Paginator className={style.paginator} totalItemsCount={totalItemsCount} pageSize={pageSize}
                 currentPage={currentPage} />
-            <ul className={style.wrapper}>
+            { card.length === 0 ? <div>No data</div> : <ul className={style.wrapper}>
                 {filterGoods()}
-            </ul>
+            </ul>}
         </div>
     )
 }
